@@ -22,17 +22,19 @@
       var status = getCookie("pmKickStartSideBarToggle");
       if (status != "") {
         wrapper.addClass('toggled');
+        setCookie("pmKickStartSideBarToggle", 'toggled', 365);
       }
       else {
-        wrapper.addClass('toggled');
-        setCookie("pmKickStartSideBarToggle", 'toggled', 365);
+        wrapper.removeClass('toggled');
+      }
+      setTimeout(wrapperCouldBeAnimated, 1000);
+      function wrapperCouldBeAnimated() {
+         wrapper.addClass('css-animate');
       }
   }
 
   jQuery(document).ready(function($) {
-    var wrapper = $('#wrapper');
     initToggleCookie();
-    wrapper.addClass('css-animate')
   });
 
   Drupal.behaviors.pmDash = {
