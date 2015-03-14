@@ -1,6 +1,6 @@
 <!-- Split button -->
 <div class="btn-group btn-group-xs">
-  <a href="<?php echo $default_link['url']; ?>" class="btn btn-default"><?php echo $default_link['title']; ?></a>
+  <a href="<?php echo $default_link['url']; ?>" class="btn btn-default <?php echo $default_link['class'] ?>"><?php echo $default_link['title']; ?></a>
   <?php if (!empty($dropdown_menu)): ?>
     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
       <span class="caret"></span>
