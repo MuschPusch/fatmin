@@ -7064,6 +7064,29 @@ table .checkbox input[type="checkbox"] {
 .sidebar ul.nav > li {
   border-bottom: 1px solid #e5e5e5;
 }
+.sidebar h2.block-title {
+  font-size: 1em;
+}
+.sidebar div.pmdashboard-icon {
+  display: block;
+  width: 100%;
+  border: none;
+}
+.sidebar div.pmdashboard-icon a.btn {
+  border: none;
+}
+.sidebar div.pmdashboard-icon .well-sm {
+  padding: 2px 0;
+}
+.sidebar h2.block-title {
+  background: #428bca;
+  padding: 4px;
+  color: #ffffff;
+}
+#wrapper.toggled .sidebar div.pmdashboard-icon a.btn span,
+#wrapper.toggled .sidebar h2.block-title {
+  visibility: hidden;
+}
 .breadcrumb {
   background-color: #fafbfc;
   border-radius: 0;
