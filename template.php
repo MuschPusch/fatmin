@@ -13,6 +13,35 @@ function pm_kickstart_theme_preprocess_views_view_table(&$vars) {
 }
 
 
+function pm_kickstart_theme_preprocess_ctools_dropdown(&$vars) {
+  $vars['dropdown_menu'] = array();
+  $vars['default_link']  = array();
+
+  $flag_first_item = TRUE;
+  foreach ($vars['links'] as $key => $value) {
+    $options = array();
+    $href = $value['href'];
+    if (isset($value['query'])) {
+      $options = array(
+        'query' => $value['query'],
+      );
+    }
+    $url = !empty($href) ? check_plain(url($href, $options)) : '';
+
+    if ($flag_first_item) {
+      $vars['default_link'] = $value;
+      $vars['default_link']['url'] = $url;
+      $vars['default_link']['class'] = !empty($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+    }
+    else {
+      $vars['dropdown_menu'][$key] = $value;
+      $vars['dropdown_menu'][$key]['url'] = $url;
+      $vars['dropdown_menu'][$key]['class'] = !empty($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+    }
+    $flag_first_item = FALSE;
+  }
+}
+
 function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
