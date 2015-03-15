@@ -70,6 +70,4 @@ scripts[] = 'js/script.js'
 ;; Theme Settings
 ;;;;;;;;;;;;;;;;;;;;;;
 
-settings[toggle_logo] = 1
 settings[bootstrap_region_well-sidebar_first] = ''
-settings[toggle_secondary_menu] = ''

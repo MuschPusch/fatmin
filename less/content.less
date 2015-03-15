@@ -161,13 +161,23 @@
       border: none;
     }
     .well-sm {
-      padding: 2px 0;
+      padding: 0;
     }
   }
   h2.block-title {
     background: @label-primary-bg;
     padding: 4px;
     color: @label-color;
+  }
+  .block-pm h2.block-title {
+    margin-bottom: 0px;
+  }
+  .sidebar-nav nav {
+    ul.nav,
+    &,
+    li.leaf {
+        width: 100%;
+    }
   }
 }
 

@@ -7076,12 +7076,20 @@ table .checkbox input[type="checkbox"] {
   border: none;
 }
 .sidebar div.pmdashboard-icon .well-sm {
-  padding: 2px 0;
+  padding: 0;
 }
 .sidebar h2.block-title {
   background: #428bca;
   padding: 4px;
   color: #ffffff;
+}
+.sidebar .block-pm h2.block-title {
+  margin-bottom: 0px;
+}
+.sidebar .sidebar-nav nav ul.nav,
+.sidebar .sidebar-nav nav,
+.sidebar .sidebar-nav nav li.leaf {
+  width: 100%;
 }
 #wrapper.toggled .sidebar div.pmdashboard-icon a.btn span,
 #wrapper.toggled .sidebar h2.block-title {

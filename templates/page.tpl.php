@@ -87,6 +87,13 @@
       <?php endif; ?>
     </div>
     <div class="pull-right">
+      <?php if (!empty($secondary_nav)): ?>
+          <nav role="navigation">
+            <?php if (!empty($secondary_nav)): ?>
+              <?php print render($secondary_nav); ?>
+            <?php endif; ?>
+          </nav>
+      <?php endif; ?>
       <?php if (!empty($page['navigation'])): ?>
         <?php print render($page['navigation']); ?>
       <?php endif; ?>
@@ -95,17 +102,13 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper" class="sidebar-wrapper">
             <div class="navbar-default sidebar clearfix" role="navigation">
-              <div class="sidebar-nav">
-                <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
+              <div class="sidebar-nav clearfix">
+                <?php if (!empty($primary_nav)): ?>
                     <nav role="navigation">
                       <?php if (!empty($primary_nav)): ?>
                         <?php print render($primary_nav); ?>
                       <?php endif; ?>
-                      <?php if (!empty($secondary_nav)): ?>
-                        <?php print render($secondary_nav); ?>
-                      <?php endif; ?>
                     </nav>
-
                 <?php endif; ?>
               </div>
               <?php if (!empty($page['sidebar_first'])): ?>
