@@ -6999,6 +6999,23 @@ table .checkbox input[type="checkbox"] {
   #wrapper {
     padding-left: 250px;
   }
+  #wrapper.user {
+    padding-left: 0px;
+    text-align: center;
+  }
+  #wrapper.user .main-content-wrapper {
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+  #wrapper.user #page-content-wrapper {
+    padding: 50px;
+    border: none;
+  }
+  #wrapper.user .footer {
+    max-width: 100%;
+  }
   #wrapper #sidebar-wrapper {
     width: 250px;
   }

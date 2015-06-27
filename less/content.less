@@ -71,6 +71,23 @@
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
+        &.user {
+            padding-left: 0px;
+            text-align:center;
+            .main-content-wrapper {
+                max-width: 450px;
+                margin-left: auto;
+                margin-right: auto;
+                text-align: left;
+            }
+            #page-content-wrapper {
+                padding: 50px;
+                border: none;
+            }
+            .footer {
+              max-width: 100%;
+            }
+        }
         #sidebar-wrapper {
             width: 250px;
         }

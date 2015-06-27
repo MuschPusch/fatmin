@@ -186,3 +186,52 @@ function pm_kickstart_theme_form_alter(array &$form, array &$form_state = array(
 
   }
 }
+
+/**
+ * Implements hook_theme
+ */
+function pm_kickstart_theme_theme() {
+  return array(
+    'user_login' => array(
+      'render element' => 'form',
+      'template' => 'user-login',
+      'arguments' => array('form' => NULL),
+      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+    ),
+    'user_register_form' => array(
+      'render element' => 'form',
+      'template' => 'user-register',
+      'arguments' => array('form' => NULL),
+      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+    ),
+    'user_pass' => array(
+      'render element' => 'form',
+      'template' => 'user-pass',
+      'arguments' => array('form' => NULL),
+      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+    ),
+  );
+}
+
+function pm_kickstart_theme_preprocess_user_login(&$variables) {
+  $variables['intro_text'] = t('Login');
+  pm_kickstart_theme_user_form_links($variables);
+}
+
+function pm_kickstart_theme_preprocess_user_register_form(&$variables) {
+  $variables['intro_text'] = t('Register');
+  pm_kickstart_theme_user_form_links($variables);
+}
+
+function pm_kickstart_theme_preprocess_user_pass(&$variables) {
+  $variables['intro_text'] = t('Forgot Password');
+  pm_kickstart_theme_user_form_links($variables);
+}
+
+function pm_kickstart_theme_user_form_links(&$variables) {
+  $variables['rendered'] = drupal_render_children($variables['form']);
+
+  $variables['forgot_password_link'] = (drupal_valid_path('user/password')) ? l(t('Forgot password?'), 'user/password') : '';
+  $variables['new_user_register_link'] = (drupal_valid_path('user/register')) ? l(t('Register?'), 'user/register') : '';
+  $variables['user_login_link'] = (drupal_valid_path('user/login')) ? l(t('Login?'), 'user/login') : '';
+}
