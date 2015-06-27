@@ -8,9 +8,11 @@
     </button>
     <ul class="dropdown-menu" role="menu">
       <?php foreach ($dropdown_menu as $link): ?>
-        <li>
-          <a href="<?php echo $link['url']; ?>" class="<?php echo $link['class']; ?>"><?php echo $link['title']; ?></a>
-        </li>
+        <?php if (!empty($link)): ?>
+          <li>
+            <a href="<?php echo $link['url']; ?>" class="<?php echo $link['class']; ?>"><?php echo $link['title']; ?></a>
+          </li>
+        <?php endif ?>
       <?php endforeach ?>
     </ul>
   <?php endif ?>
