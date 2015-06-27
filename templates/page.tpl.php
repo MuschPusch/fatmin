@@ -117,6 +117,7 @@
                 </div>
               <?php endif; ?>
             </div>
+            <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
         </div>
         <!-- /#sidebar-wrapper -->
 
@@ -127,7 +128,6 @@
                     <div class="col-lg-12">
                       <div class="row">
                         <header role="banner" id="page-header">
-                          <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
                           <?php if (!empty($site_slogan)): ?>
                             <span class="lead"><?php print $site_slogan; ?></span>
                           <?php endif; ?>
