@@ -135,7 +135,7 @@ function pm_kickstart_theme_bootstrap_search_form_wrapper($variables) {
   }
 
   $button  = '<span class="input-group-btn">';
-  $button .= '<button type="' . $button_type . '" class="btn btn-default">';
+  $button .= '<button type="' . $button_type . '" tabIndex="-1" class="btn btn-default">';
   $button .= '<i class="fa '. $fa_icon .' fa-fw"></i>';
   $button .= '</button>';
   $button .= '</span>';
