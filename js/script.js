@@ -3,7 +3,7 @@
       var d = new Date();
       d.setTime(d.getTime() + (exdays*24*60*60*1000));
       var expires = "expires="+d.toUTCString();
-      document.cookie = cname + "=" + cvalue + "; " + expires;
+      document.cookie = cname + "=" + cvalue + ";path=/;" + expires;
   }
 
   function getCookie(cname) {
@@ -19,15 +19,15 @@
 
   function initToggleCookie() {
       var wrapper = $('#wrapper');
-      var status = getCookie("pmKickStartSideBarToggle");
+      var status = getCookie("Drupal.pmKickstartTheme.sidebar.toggle");
       if (status != "") {
         wrapper.addClass('toggled');
-        setCookie("pmKickStartSideBarToggle", 'toggled', 365);
+        setCookie("Drupal.pmKickstartTheme.sidebar.toggle", 'toggled', 365);
       }
       else {
         wrapper.removeClass('toggled');
       }
-      setTimeout(wrapperCouldBeAnimated, 1000);
+      setTimeout(wrapperCouldBeAnimated, 10);
       function wrapperCouldBeAnimated() {
          wrapper.addClass('css-animate');
       }
@@ -45,11 +45,11 @@
         // $('#wrapper').toggleClass('toggled');
         if (wrapper.hasClass('toggled')) {
           wrapper.removeClass('toggled');
-          setCookie("pmKickStartSideBarToggle", '', 365);
+          setCookie("Drupal.pmKickstartTheme.sidebar.toggle", '', 365);
         }
         else {
           wrapper.addClass('toggled');
-          setCookie("pmKickStartSideBarToggle", 'toggled', 365);
+          setCookie("Drupal.pmKickstartTheme.sidebar.toggle", 'toggled', 365);
         }
 
        });
