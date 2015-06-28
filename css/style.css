@@ -6965,6 +6965,7 @@ table .checkbox input[type="checkbox"] {
 #wrapper #page-content-wrapper {
   width: 100%;
   padding: 15px;
+  display: inline-block;
 }
 #wrapper.toggled {
   padding-left: 250px;
