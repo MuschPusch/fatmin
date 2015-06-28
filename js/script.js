@@ -27,7 +27,7 @@
       else {
         wrapper.removeClass('toggled');
       }
-      setTimeout(wrapperCouldBeAnimated, 10);
+      setTimeout(wrapperCouldBeAnimated, 2000);
       function wrapperCouldBeAnimated() {
          wrapper.addClass('css-animate');
       }
