@@ -48,6 +48,21 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
 
   $flag_first_item = TRUE;
   foreach ($vars['links'] as $key => $value) {
+    if (isset($value['attributes']['class'])) {
+      if ($key = array_search('icon compact add', $value['attributes']['class']) !== FALSE) {
+        unset($value['attributes']['class'][0]);
+        $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
+        $value['attributes']['class'][] = 'btn';
+        $value['attributes']['class'][] = 'btn-default';
+      }
+      if ($key = array_search('icon compact rearrange', $value['attributes']['class']) !== FALSE) {
+        unset($value['attributes']['class'][0]);
+        $value['title'] = '<i class="fa fa-gear"></i> ' . $value['title'];
+        $value['attributes']['class'][] = 'btn';
+        $value['attributes']['class'][] = 'btn-default';
+      }
+    }
+
     $options = array();
     $href = $value['href'];
     if (isset($value['query'])) {
@@ -234,4 +249,51 @@ function pm_kickstart_theme_user_form_links(&$variables) {
   $variables['forgot_password_link'] = (drupal_valid_path('user/password')) ? l(t('Forgot password?'), 'user/password') : '';
   $variables['new_user_register_link'] = (drupal_valid_path('user/register')) ? l(t('Register?'), 'user/register') : '';
   $variables['user_login_link'] = (drupal_valid_path('user/login')) ? l(t('Login?'), 'user/login') : '';
+}
+
+function pm_kickstart_theme_preprocess_links(&$vars) {
+  if ($key = array_search('links inline', $vars['attributes']['class']) !== FALSE) {
+    $vars['attributes']['class'][$key] = 'list-inline';
+  }
+}
+
+function pm_kickstart_theme_preprocess_ctools_dropbutton(&$vars) {
+  dpm($vars);
+  $vars['dropdown_menu'] = array();
+  $vars['default_link']  = array();
+
+  $flag_first_item = TRUE;
+  foreach ($vars['links'] as $key => $value) {
+    $options = array();
+    $href = $value['href'];
+    if (isset($value['query'])) {
+      $options = array(
+        'query' => $value['query'],
+      );
+    }
+    $url = !empty($href) ? check_plain(url($href, $options)) : '';
+
+    if ($flag_first_item) {
+      $vars['default_link'] = $value;
+      $vars['default_link']['url'] = $url;
+      $vars['default_link']['class'] = !empty($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+    }
+    else {
+      $vars['dropdown_menu'][$key] = $value;
+      $vars['dropdown_menu'][$key]['url'] = $url;
+      $vars['dropdown_menu'][$key]['class'] = !empty($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+    }
+    $flag_first_item = FALSE;
+  }
+}
+
+function pm_kickstart_theme_ctools_collapsible($vars) {
+  dpm($vars);
+  $class = $vars['collapsed'] ? ' ctools-collapsed' : '';
+  $output = '<div class="xoxo ctools-collapsible-container' . $class . '">';
+  $output .= '<div class="ctools-collapsible-handle">' . $vars['handle'] . '</div>';
+  $output .= '<div class="ctools-collapsible-content">' . $vars['content'] . '</div>';
+  $output .= '</div>';
+
+  return $output;
 }

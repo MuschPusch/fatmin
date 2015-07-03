@@ -7265,3 +7265,19 @@ a.btn-default.pm-dashboard-link-main:hover {
 #homebox .pmdash-homebox-block .portlet-plus .fa-plus.hide {
   display: inline-block !important;
 }
+.btn-group-xs ul.dropdown-menu {
+  padding: 0;
+}
+.btn-group-xs ul.dropdown-menu button {
+  margin: 0;
+}
+.btn-group-xs ul.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+}
+.btn-group-xs ul.dropdown-menu .btn {
+  text-align: left;
+}
+ul#views-display-menu-tabs ul.dropdown-menu li {
+  margin: 0;
+}
