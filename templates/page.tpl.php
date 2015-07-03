@@ -86,7 +86,12 @@
       <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
     </div>
-    <div class="pull-right">
+    <?php if (!empty($page['header'])): ?>
+      <div class="pull-left header">
+        <?php print render($page['header']); ?>
+      </div>
+    <?php endif; ?>
+    <div class="pull-right secondary-nav">
       <?php if (!empty($secondary_nav)): ?>
           <nav role="navigation">
             <?php if (!empty($secondary_nav)): ?>
@@ -131,8 +136,6 @@
                           <?php if (!empty($site_slogan)): ?>
                             <span class="lead"><?php print $site_slogan; ?></span>
                           <?php endif; ?>
-
-                          <?php print render($page['header']); ?>
                         </header> <!-- /#page-header -->
 
                         <section>
