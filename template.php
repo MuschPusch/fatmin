@@ -6,6 +6,16 @@
  */
 
 /**
+ * Implements hook_preprocess_page().
+ */
+function pm_kickstart_theme_preprocess_page(&$variables) {
+  // Select minimalist login screen template for anonymous users.
+  if (!empty($variables['user']) && empty($variables['user']->uid)) {
+    $variables['theme_hook_suggestions'][] = 'page__pmkickstart_minimalist_user_login';
+  }
+}
+
+/**
  * Implements hook_preprocess_views_view_table().
  */
 function pm_kickstart_theme_preprocess_views_view_table(&$vars) {
