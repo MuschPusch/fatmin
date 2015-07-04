@@ -39,12 +39,13 @@ stylesheets[all][] = css/style.css
 ; ;; Scripts
 ; ;;;;;;;;;;;;;;;;;;;;;
 ;
+; scripts[] = 'bootstrap/js/bootstrap.js'
 ; scripts[] = 'bootstrap/js/affix.js'
 ; scripts[] = 'bootstrap/js/alert.js'
 ; scripts[] = 'bootstrap/js/button.js'
 ; scripts[] = 'bootstrap/js/carousel.js'
 ; scripts[] = 'bootstrap/js/collapse.js'
-scripts[] = 'bootstrap/js/dropdown.js'
+; scripts[] = 'bootstrap/js/dropdown.js'
 ; scripts[] = 'bootstrap/js/modal.js'
 ; scripts[] = 'bootstrap/js/tooltip.js'
 ; scripts[] = 'bootstrap/js/popover.js'
