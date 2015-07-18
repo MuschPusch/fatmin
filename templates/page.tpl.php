@@ -111,17 +111,17 @@
             <div class="sidebar-nav clearfix">
               <ul class="nav nav-pills nav-stacked fa-ul">
                 <li role="separator" class="divider"><h6>Menu</h6></li>
-                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="#">Home</a></li>
+                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="/">Home</a></li>
                 <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Reports</a></li>
-                <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="#">Projects<span class="badge badge-projects">1</span></a></li>
+                <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="/pm/projects">Projects<span class="badge badge-projects">1</span></a></li>
                 <li role="separator" class="divider"><h6>Some seperator</h6></li>
-                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="#">Home</a></li>
-                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Issues<span class="badge badge-issues">4</span></a></li>
-                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Timetracking</a></li>
-                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Issues</a></li>
+                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="/">Home</a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/issues">Issues<span class="badge badge-issues">4</span></a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/timetracking">Timetracking</a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/issues">Issues</a></li>
                 <ul class="nav nav-pills nav-stacked fa-ul nav-pills-sub">
-                  <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="#">Add issue</a></li>
-                  <li role="presentation"><i class='fa fa-li fa-list icon-sub' ></i><a href="#">My issues</a></li>
+                  <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="/node/add/issue">Add issue</a></li>
+                  <li role="presentation"><i class='fa fa-li fa-list icon-sub' ></i><a href="/">My issues</a></li>
                 </ul>
               </ul>
               <!--
@@ -147,7 +147,7 @@
       <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-      <div id="page-content-wrapper" class="main-content-wrapper col-md-8">
+      <div id="page-content-wrapper" class="main-content-wrapper col-md-10">
           <div class="container-fluid">
               <div class="row">
                   <div class="col-lg-12">
