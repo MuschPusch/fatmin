@@ -10,9 +10,16 @@
  */
 function pm_kickstart_theme_preprocess_page(&$variables) {
   // Select minimalist login screen template for anonymous users.
+  // dsm($variables);
   if (!empty($variables['user']) && empty($variables['user']->uid)) {
     $variables['theme_hook_suggestions'][] = 'page__pmkickstart_minimalist_user_login';
   }
+}
+/**
+ * Implements hook_preprocess_html().
+ */
+function pm_kickstart_theme_preprocess_html(&$vars) {
+  $vars['body_attributes_array']['class'][] = 'navbar-is-fixed-top';
 }
 
 /**

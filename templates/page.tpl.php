@@ -105,71 +105,73 @@
     </div>
   </header>
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" class="sidebar-wrapper">
-            <div class="navbar-default sidebar clearfix" role="navigation">
-              <div class="sidebar-nav clearfix">
-                <?php if (!empty($primary_nav)): ?>
-                    <nav role="navigation">
-                      <?php if (!empty($primary_nav)): ?>
-                        <?php print render($primary_nav); ?>
-                      <?php endif; ?>
-                    </nav>
-                <?php endif; ?>
-              </div>
-              <?php if (!empty($page['sidebar_first'])): ?>
-                <div class="sidebar-first-wrapper">
-                  <?php print render($page['sidebar_first']); ?>
-                </div>
+  <div class="row">
+      <div id="sidebar-wrapper" class="sidebar-wrapper col-md-2">
+          <div class="navbar-default sidebar clearfix" role="navigation">
+            <div class="sidebar-nav clearfix">
+              <?php if (!empty($primary_nav)): ?>
+                  <nav role="navigation">
+                    <?php if (!empty($primary_nav)): ?>
+                      <?php print render($primary_nav); ?>
+                    <?php endif; ?>
+                  </nav>
               <?php endif; ?>
             </div>
-            <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
-        </div>
-        <!-- /#sidebar-wrapper -->
+            <?php if (!empty($page['sidebar_first'])): ?>
+              <div class="sidebar-first-wrapper">
+                <?php print render($page['sidebar_first']); ?>
+              </div>
+            <?php endif; ?>
+          </div>
+          <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
+      </div>
+      <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
-        <div id="page-content-wrapper" class="main-content-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                      <div class="row">
-                        <header role="banner" id="page-header">
-                          <?php if (!empty($site_slogan)): ?>
-                            <span class="lead"><?php print $site_slogan; ?></span>
-                          <?php endif; ?>
-                        </header> <!-- /#page-header -->
+      <div id="page-content-wrapper" class="main-content-wrapper col-md-8">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-lg-12">
+                    <div class="row">
+                      <header role="banner" id="page-header">
+                        <?php if (!empty($site_slogan)): ?>
+                          <span class="lead"><?php print $site_slogan; ?></span>
+                        <?php endif; ?>
+                      </header> <!-- /#page-header -->
 
-                        <section>
-                          <?php if (!empty($page['highlighted'])): ?>
-                            <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-                          <?php endif; ?>
-                          <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-                          <a id="main-content"></a>
-                          <?php print render($title_prefix); ?>
-                          <?php if (!empty($title)): ?>
-                            <h1 class="page-header"><?php print $title; ?></h1>
-                          <?php endif; ?>
-                          <?php print render($title_suffix); ?>
-                          <?php print $messages; ?>
-                          <?php if (!empty($tabs)): ?>
-                            <?php print render($tabs); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($page['help'])): ?>
-                            <?php print render($page['help']); ?>
-                          <?php endif; ?>
-                          <?php if (!empty($action_links)): ?>
-                            <ul class="action-links"><?php print render($action_links); ?></ul>
-                          <?php endif; ?>
-                          <?php print render($page['content']); ?>
-                        </section>
+                      <section>
+                        <?php if (!empty($page['highlighted'])): ?>
+                          <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+                        <?php endif; ?>
+                        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+                        <a id="main-content"></a>
+                        <?php print render($title_prefix); ?>
+                        <?php if (!empty($title)): ?>
+                          <h1 class="page-header"><?php print $title; ?></h1>
+                        <?php endif; ?>
+                        <?php print render($title_suffix); ?>
+                        <?php print $messages; ?>
+                        <?php if (!empty($tabs)): ?>
+                          <?php print render($tabs); ?>
+                        <?php endif; ?>
+                        <?php if (!empty($page['help'])): ?>
+                          <?php print render($page['help']); ?>
+                        <?php endif; ?>
+                        <?php if (!empty($action_links)): ?>
+                          <ul class="action-links"><?php print render($action_links); ?></ul>
+                        <?php endif; ?>
+                        <?php print render($page['content']); ?>
+                      </section>
 
-                        <footer class="footer container">
-                          <?php print render($page['footer']); ?>
-                        </footer>
-                      </div>
+                      <footer class="footer container">
+                        <?php print render($page['footer']); ?>
+                      </footer>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- /#page-content-wrapper -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- /#page-content-wrapper -->
 
     </div>
+  </div>
