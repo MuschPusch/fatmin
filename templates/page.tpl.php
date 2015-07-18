@@ -48,7 +48,7 @@
  *   (e.g., the view and edit tabs when displaying a node).
  * - $action_links (array): Actions local to the page, such as 'Add menu' on the
  *   menu administration interface.
- * - $feed_icons: A string of all feed icons for the current page.
+ * - $feed_icon-mains: A string of all feed icon-mains for the current page.
  * - $node: The node object, if there is an automatically-loaded node
  *   associated with the page, and the node ID is the second argument
  *   in the page's path (e.g. node/12345 and node/12345/revisions, but not
@@ -105,25 +105,44 @@
     </div>
   </header>
         <!-- Sidebar -->
-  <div class="row">
-      <div id="sidebar-wrapper" class="sidebar-wrapper col-md-2">
-          <div class="navbar-default sidebar clearfix" role="navigation">
+  <div class="row no-gutter">
+      <div id="sidebar-wrapper" class="sidebar-wrapper col-md-2 ">
+          <div class="navbar-inverse sidebar clearfix" role="navigation">
             <div class="sidebar-nav clearfix">
+              <ul class="nav nav-pills nav-stacked fa-ul">
+                <li role="separator" class="divider"><h6>Menu</h6></li>
+                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="#">Home</a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Reports</a></li>
+                <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="#">Projects<span class="badge badge-projects">1</span></a></li>
+                <li role="separator" class="divider"><h6>Some seperator</h6></li>
+                <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="#">Home</a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Issues<span class="badge badge-issues">4</span></a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Timetracking</a></li>
+                <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Issues</a></li>
+                <ul class="nav nav-pills nav-stacked fa-ul nav-pills-sub">
+                  <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="#">Add issue</a></li>
+                  <li role="presentation"><i class='fa fa-li fa-list icon-sub' ></i><a href="#">My issues</a></li>
+                </ul>
+              </ul>
+              <!--
               <?php if (!empty($primary_nav)): ?>
                   <nav role="navigation">
                     <?php if (!empty($primary_nav)): ?>
-                      <?php print render($primary_nav); ?>
+                      <?php //print render($primary_nav); ?>
                     <?php endif; ?>
                   </nav>
               <?php endif; ?>
+              -->
             </div>
             <?php if (!empty($page['sidebar_first'])): ?>
               <div class="sidebar-first-wrapper">
-                <?php print render($page['sidebar_first']); ?>
+                <?php //print render($page['sidebar_first']); ?>
               </div>
             <?php endif; ?>
           </div>
-          <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
+          <br />
+          <br />
+            <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
       </div>
       <!-- /#sidebar-wrapper -->
 
@@ -133,12 +152,6 @@
               <div class="row">
                   <div class="col-lg-12">
                     <div class="row">
-                      <header role="banner" id="page-header">
-                        <?php if (!empty($site_slogan)): ?>
-                          <span class="lead"><?php print $site_slogan; ?></span>
-                        <?php endif; ?>
-                      </header> <!-- /#page-header -->
-
                       <section>
                         <?php if (!empty($page['highlighted'])): ?>
                           <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>

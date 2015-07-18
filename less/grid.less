@@ -1,0 +1,25 @@
+#sidebar-wrapper{
+  padding-bottom: 100%;
+  margin-bottom: -100%;
+  background: @gray-lightest;
+}
+
+.main-content-wrapper {
+  overflow: hidden;
+}
+
+// Utility to set no gutter.
+.row.no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.row.no-gutter [class*='col-']:not(:first-child),
+.row.no-gutter [class*='col-']:not(:last-child) {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.main-content-wrapper {
+  padding: 25px !important;
+}

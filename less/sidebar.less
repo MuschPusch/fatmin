@@ -1,0 +1,55 @@
+.navbar .logo {
+  padding-left: 15px;
+}
+
+
+/* SIDEBAR */
+.sidebar-nav a{
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.icon-main {
+  padding: 9px 15px;
+  color: @navbar-inverse-link-color;
+}
+.icon-sub {
+  padding: 0px;
+  color: @navbar-inverse-link-color;
+}
+
+.navbar-inverse {
+  background-color: @navbar-inverse-brand-hover-color;
+  a {
+    color: @navbar-inverse-link-color;
+  }
+  a:hover {
+    background-color: transparent !important;
+    font-weight: 1000;
+  }
+}
+
+.divider {
+  margin-left: -1em !important;
+  color: @navbar-inverse-link-color;
+}
+.nav-pills-sub > li > a {
+  padding: 0px;
+  text-transform: lowercase;
+}
+
+.sidebar-nav {
+  .badge.badge-issues {
+    background-color: @issues;
+  }
+  .badge.badge-projects {
+    background-color: @projects;
+  }
+  .badge {
+    float: right;
+    position: absolute;
+    top: 8px;
+    margin-left: 15px !important;
+  }
+}

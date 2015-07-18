@@ -13,12 +13,14 @@
 @gray-dark:              lighten(#000, 20%);   // #333
 @gray:                   lighten(#000, 33.5%); // #555
 @gray-light:             lighten(#000, 60%);   // #999
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+@gray-lighter:           lighten(#000, 93.5%); // #EBEEF0
 @gray-lightest:          lighten(#000, 98%);   // #eee
 
 // Brand colors
 // -------------------------
 
+@projects: #05A7CF;
+@issues: #F9D00D;
 @brand-primary:         #428bca;
 @brand-success:         #5cb85c;
 @brand-warning:         #f0ad4e;
@@ -30,7 +32,7 @@
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fff;
+@body-bg:               #EBEEF0;
 @text-color:            @gray-dark;
 
 // Links
@@ -51,7 +53,7 @@
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
-@font-size-h1:            floor(@font-size-base * 2.6); // ~36px
+@font-size-h1:            floor(@font-size-base * 2.0); // ~28px
 @font-size-h2:            floor(@font-size-base * 2.15); // ~30px
 @font-size-h3:            ceil(@font-size-base * 1.7); // ~24px
 @font-size-h4:            ceil(@font-size-base * 1.25); // ~18px
@@ -62,7 +64,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    500;
+@headings-font-weight:    300;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -305,7 +307,7 @@
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          #fff;
+@navbar-inverse-brand-hover-color:          #fafafa;
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
