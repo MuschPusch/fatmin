@@ -1454,11 +1454,11 @@ th {
   padding: 8px;
   line-height: 1.42857143;
   vertical-align: top;
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ffffff;
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #dddddd;
+  border-bottom: 2px solid #ffffff;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -1469,7 +1469,7 @@ th {
   border-top: 0;
 }
 .table > tbody + tbody {
-  border-top: 2px solid #dddddd;
+  border-top: 2px solid #ffffff;
 }
 .table .table {
   background-color: #ebeef0;
@@ -1483,7 +1483,7 @@ th {
   padding: 5px;
 }
 .table-bordered {
-  border: 1px solid #dddddd;
+  border: 1px solid #ffffff;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
@@ -1491,7 +1491,7 @@ th {
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #dddddd;
+  border: 1px solid #ffffff;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {
@@ -1629,7 +1629,7 @@ table th[class*="col-"] {
     margin-bottom: 15px;
     overflow-y: hidden;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    border: 1px solid #dddddd;
+    border: 1px solid #ffffff;
   }
   .table-responsive > .table {
     margin-bottom: 0;
@@ -5627,7 +5627,7 @@ button.list-group-item-danger.active:focus {
 .panel > .panel-body + .table-responsive,
 .panel > .table + .panel-body,
 .panel > .table-responsive + .panel-body {
-  border-top: 1px solid #dddddd;
+  border-top: 1px solid #ffffff;
 }
 .panel > .table > tbody:first-child > tr:first-child th,
 .panel > .table > tbody:first-child > tr:first-child td {
@@ -7021,9 +7021,6 @@ table tr.error {
 .list-inline > li.first {
   padding-left: 0;
 }
-.nav-tabs {
-  margin-bottom: 10px;
-}
 ul li.collapsed,
 ul li.expanded,
 ul li.leaf {
@@ -7399,6 +7396,19 @@ table .checkbox input[type="checkbox"] {
   position: absolute;
   top: 8px;
   margin-left: 15px !important;
+}
+.breadcrumb {
+  background-color: #fafbfc;
+  line-height: 10px;
+  padding: 0px;
+  font-size: 11px;
+  border-radius: 0;
+  background: #EBEDF0;
+}
+.panel {
+  background-color: #FFF;
+  border-top: 2px solid #428bca;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 -1px 0 0 rgba(0, 0, 0, 0.03);
 }
 /*
 @import 'header.less';
