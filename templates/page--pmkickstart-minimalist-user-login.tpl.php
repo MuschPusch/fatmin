@@ -76,11 +76,13 @@
 <div id="wrapper" class="clearfix user">
   <header id="navbar" role="banner" class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
+<!--
       <?php if ($logo): ?>
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
       <?php endif; ?>
+-->
 
       <?php if (!empty($site_name)): ?>
       <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
@@ -108,7 +110,7 @@
         <div id="page-content-wrapper" class="main-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-3 col-md-push-1">
                       <div class="row">
                         <header role="banner" id="page-header">
                           <?php if (!empty($site_slogan)): ?>
