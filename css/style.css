@@ -7480,6 +7480,9 @@ table .checkbox input[type="checkbox"] {
   border-color: #16a085;
   background-color: #16a085 !important;
 }
+td > a {
+  color: #555555 !important;
+}
 /* move below */
 .breadcrumb {
   background-color: #fafbfc;
