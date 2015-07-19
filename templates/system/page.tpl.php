@@ -173,7 +173,7 @@
                         <?php if (!empty($action_links)): ?>
                           <ul class="action-links"><?php print render($action_links); ?></ul>
                         <?php endif; ?>
-                        <div class='panel'>
+                        <div class='<?php echo $show_panel; ?>'>
                           <div class="panel-body">
                             <?php print render($page['content']); ?>
                           </div>

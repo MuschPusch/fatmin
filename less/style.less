@@ -91,9 +91,81 @@ thead {
   background-color: #16a085 !important;
 }
 
+/* panel */
+.panel .panel-heading .panel-ctrls {
+  width: auto;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+
+#homebox-add, 
+#homebox-minimize-to-save,
+#homebox-changes-made {
+  display:none;
+}
+
 
 // Theme specific.
 /*
+.homebox-portlet .portlet-header {
+    border: none;
+    background: transparent;
+    font-size: inherit;
+}
+.portlet-header a.btn {
+    background: white;
+}
+
+.homebox-portlet {
+    background-color: transparent;
+    border: none;
+}
+
+.homebox-column {
+    margin: 0;
+    background: transparent;
+    min-height: 40px;
+}
+
+.pmdash-homebox-block {
+  .panel-heading {
+    padding: 0;
+    .portlet-header {
+      padding: 10px 15px;
+    }
+  }
+  .portlet-header {
+    .btn-group {
+      z-index: 10;
+    }
+    .portlet-title {
+      z-index: 9;
+    }
+  }
+  .portlet-maximize {
+    .fa-expand.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-minimize {
+    .fa-compress.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-minus {
+    .fa-minus.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-plus {
+    .fa-plus.hide {
+      display: inline-block !important;
+    }
+  }
+}
+
+
 @import 'header.less';
 @import 'content.less';
 @import 'footer.less';
@@ -192,68 +264,6 @@ a.btn-default.pm-dashboard-link-main:hover {
 
 .region-navigation {
   padding: 0px 10px;
-}
-
-#homebox .homebox-portlet .portlet-header {
-    border: none;
-    background: transparent;
-    font-size: inherit;
-}
-.portlet-header a.btn {
-    background: white;
-}
-
-#homebox .homebox-portlet {
-    background-color: transparent;
-    border: none;
-}
-
-#homebox .homebox-column {
-    margin: 0;
-    background: transparent;
-    min-height: 40px;
-}
-
-#homebox .homebox-portlet .homebox-portlet-inner {
-  border-color: #dddddd;
-}
-
-
-#homebox .pmdash-homebox-block {
-  .panel-heading {
-    padding: 0;
-    .portlet-header {
-      padding: 10px 15px;
-    }
-  }
-  .portlet-header {
-    .btn-group {
-      z-index: 10;
-    }
-    .portlet-title {
-      z-index: 9;
-    }
-  }
-  .portlet-maximize {
-    .fa-expand.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-minimize {
-    .fa-compress.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-minus {
-    .fa-minus.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-plus {
-    .fa-plus.hide {
-      display: inline-block !important;
-    }
-  }
 }
 
 .btn-group-xs ul.dropdown-menu {

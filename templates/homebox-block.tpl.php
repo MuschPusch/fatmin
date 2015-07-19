@@ -6,19 +6,23 @@
  */
 ?>
 <div id="homebox-block-<?php print $block->key; ?>" class="panel <?php print $block->homebox_classes ?> clearfix block block-<?php print $block->module ?>">
-  <div class="panel-body">
+  <div class="homebox-portlet">
     <div class="homebox-portlet-inner">
-      <h3 class="portlet-header">
-        <?php if ($block->closable): ?>
-          <a class="portlet-icon portlet-close"></a>
-        <?php endif; ?>
-        <a class="portlet-icon portlet-maximize"></a>
-        <a class="portlet-icon portlet-minus"></a>
-        <?php if ($page->settings['color'] || isset($block->edit_form)): ?>
-          <a class="portlet-icon portlet-settings"></a>
-        <?php endif; ?>
-        <span class="portlet-title"><?php print $block->subject ?></span>
-      </h3>
+      <div class="panel-heading portlet-header">
+        <div class="panel-title">
+            <?php print $block->subject ?>
+          <div class="panel-ctrls">
+            <?php if ($block->closable): ?>
+              <i class="portlet-icon portlet-close glyphicon glyphicon-remove-circle"></i>
+            <?php endif; ?>
+            <i class="portlet-icon portlet-minus glyphicon glyphicon-minus"></i>
+            <?php if ($page->settings['color'] || isset($block->edit_form)): ?>
+              <i class="portlet-icon portlet-settings glyphicon glyphicon-cog"></i>
+            <?php endif; ?>
+            <i class="portlet-icon portlet-maximize glyphicon glyphicon-resize-full"></i>
+          </div>
+        </div>
+      </div>
       <div class="portlet-config">
         <?php if ($page->settings['color']): ?>
           <div class="clearfix"><div class="homebox-colors">
@@ -30,7 +34,7 @@
         <?php endif; ?>
         <?php if (isset($block->edit_form)): print $block->edit_form; endif; ?>
       </div>
-       <div class="portlet-content content"><?php if (is_string($block->content)){ print $block->content; } else { print drupal_render($block->content); } ?></div>
+      <div class="portlet-content content panel-body"><?php if (is_string($block->content)){ print $block->content; } else { print drupal_render($block->content); } ?></div>
     </div>
   </div>
 </div>
