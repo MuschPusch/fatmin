@@ -15,9 +15,9 @@ function pm_kickstart_theme_preprocess_page(&$vars) {
   }
 
   $no_panel_wrapper = array('pm/dashboard');
-  $vars['show_panel'] = 'no-panel';
+  $vars['show_panel'] = FALSE;
   if (!in_array(current_path(), $no_panel_wrapper)) {
-    $vars['show_panel'] = 'panel';
+    $vars['show_panel'] = TRUE;
   }
 }
 /**

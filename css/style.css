@@ -7397,6 +7397,29 @@ table .checkbox input[type="checkbox"] {
   top: 8px;
   margin-left: 15px !important;
 }
+#homebox-add,
+#homebox-minimize-to-save,
+#homebox-changes-made {
+  display: none;
+}
+.homebox-auto-save #homebox-save-form {
+  display: none;
+}
+#homebox-buttons {
+  padding: 15px;
+}
+/* panel */
+.panel .panel-heading .panel-ctrls {
+  width: auto;
+  float: right;
+  padding: 0;
+  margin: 0;
+}
+.panel {
+  background-color: #FFF;
+  border-top: 2px solid #428bca;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 -1px 0 0 rgba(0, 0, 0, 0.03);
+}
 /* move below */
 .breadcrumb {
   background-color: #fafbfc;
@@ -7405,11 +7428,6 @@ table .checkbox input[type="checkbox"] {
   font-size: 11px;
   border-radius: 0;
   background: #EBEDF0;
-}
-.panel {
-  background-color: #FFF;
-  border-top: 2px solid #428bca;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 -1px 0 0 rgba(0, 0, 0, 0.03);
 }
 .form-control {
   border: 1px solid #E0E0E0;
@@ -7478,18 +7496,6 @@ thead {
 .timeline-green .timeline-body {
   border-color: #16a085;
   background-color: #16a085 !important;
-}
-/* panel */
-.panel .panel-heading .panel-ctrls {
-  width: auto;
-  float: right;
-  padding: 0;
-  margin: 0;
-}
-#homebox-add,
-#homebox-minimize-to-save,
-#homebox-changes-made {
-  display: none;
 }
 /*
 .homebox-portlet .portlet-header {

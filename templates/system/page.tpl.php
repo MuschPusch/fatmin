@@ -173,11 +173,15 @@
                         <?php if (!empty($action_links)): ?>
                           <ul class="action-links"><?php print render($action_links); ?></ul>
                         <?php endif; ?>
-                        <div class='<?php echo $show_panel; ?>'>
+                        <?php if ($show_panel): ?>
+                        <div class='panel'>
                           <div class="panel-body">
                             <?php print render($page['content']); ?>
                           </div>
                         </div>
+                        <?php else: ?>
+                          <?php print render($page['content']); ?>
+                        <?php endif; ?>
                       </section>
 
                       <footer class="footer container">
