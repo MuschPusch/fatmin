@@ -8,11 +8,16 @@
 /**
  * Implements hook_preprocess_page().
  */
-function pm_kickstart_theme_preprocess_page(&$variables) {
+function pm_kickstart_theme_preprocess_page(&$vars) {
   // Select minimalist login screen template for anonymous users.
-  // dsm($variables);
-  if (!empty($variables['user']) && empty($variables['user']->uid)) {
-    $variables['theme_hook_suggestions'][] = 'page__pmkickstart_minimalist_user_login';
+  if (!empty($vars['user']) && empty($vars['user']->uid)) {
+    $vars['theme_hook_suggestions'][] = 'page__pmkickstart_minimalist_user_login';
+  }
+
+  $no_panel_wrapper = array('pm/dashboard');
+  $vars['show_panel'] = 'no-panel';
+  if (!in_array(current_path(), $no_panel_wrapper)) {
+    $vars['show_panel'] = 'panel';
   }
 }
 /**
