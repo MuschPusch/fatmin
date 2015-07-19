@@ -314,3 +314,7 @@ function pm_kickstart_theme_ctools_collapsible($vars) {
 
   return $output;
 }
+
+function pm_kickstart_theme_css_alter(&$css) {
+  unset($css[drupal_get_path('module', 'homebox') . '/homebox.css']);
+}
