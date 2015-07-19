@@ -77,9 +77,11 @@
   <header id="navbar" role="banner" class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <?php if ($logo): ?>
+<!--
       <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
       </a>
+-->
       <?php endif; ?>
 
       <?php if (!empty($site_name)): ?>
@@ -120,7 +122,7 @@
                 <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/timetracking">Timetracking</a></li>
                 <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/issues">Issues</a></li>
                 <ul class="nav nav-pills nav-stacked fa-ul nav-pills-sub">
-                  <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="/node/add/issue">Add issue</a></li>
+                  <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="/node/add/pmissue">Add issue</a></li>
                   <li role="presentation"><i class='fa fa-li fa-list icon-sub' ></i><a href="/">My issues</a></li>
                 </ul>
               </ul>

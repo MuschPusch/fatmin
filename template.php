@@ -6,6 +6,33 @@
  */
 
 /**
+ * Implements hook_preprocess_node().
+ */
+function pm_kickstart_theme_preprocess_node(&$vars) {
+  $vars['submitted'] = '<h5>' . t('Created by !username on !datetime',
+    array(
+      '!username' => $vars['name'],
+      '!datetime' => $vars['date'],
+    )) . '</h5>';
+}
+
+function pm_kickstart_theme_node_view_alter(&$node) {
+  // Needs work.
+  $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn';
+  $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn-success';
+}
+
+function pm_kickstart_theme_comment_view_alter(&$comment) {
+  foreach ($comment['links']['comment']['#links'] as &$link) {
+    $btn = 'btn-success';
+    if ($link['title'] == 'delete') {
+      $btn = 'btn-danger';
+    }
+    $link['attributes'] = array('class' => array('btn', $btn));
+  }
+}
+
+/**
  * Implements hook_preprocess_page().
  */
 function pm_kickstart_theme_preprocess_page(&$vars) {
@@ -280,7 +307,6 @@ function pm_kickstart_theme_preprocess_links(&$vars) {
 }
 
 function pm_kickstart_theme_preprocess_ctools_dropbutton(&$vars) {
-  dpm($vars);
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
 
@@ -310,7 +336,6 @@ function pm_kickstart_theme_preprocess_ctools_dropbutton(&$vars) {
 }
 
 function pm_kickstart_theme_ctools_collapsible($vars) {
-  dpm($vars);
   $class = $vars['collapsed'] ? ' ctools-collapsed' : '';
   $output = '<div class="xoxo ctools-collapsible-container' . $class . '">';
   $output .= '<div class="ctools-collapsible-handle">' . $vars['handle'] . '</div>';
@@ -322,4 +347,46 @@ function pm_kickstart_theme_ctools_collapsible($vars) {
 
 function pm_kickstart_theme_css_alter(&$css) {
   unset($css[drupal_get_path('module', 'homebox') . '/homebox.css']);
+}
+
+function pm_kickstart_theme_preprocess_user_picture(&$variables) {
+  $variables['user_picture'] = '';
+  if (variable_get('user_pictures', 0)) {
+    $account = $variables['account'];
+    if (!empty($account->picture)) {
+      // @TODO: Ideally this function would only be passed file objects, but
+      // since there's a lot of legacy code that JOINs the {users} table to
+      // {node} or {comments} and passes the results into this function if we
+      // a numeric value in the picture field we'll assume it's a file id
+      // and load it for them. Once we've got user_load_multiple() and
+      // comment_load_multiple() functions the user module will be able to load
+      // the picture files in mass during the object's load process.
+      if (is_numeric($account->picture)) {
+        $account->picture = file_load($account->picture);
+      }
+      if (!empty($account->picture->uri)) {
+        $filepath = $account->picture->uri;
+      }
+    }
+    elseif (variable_get('user_picture_default', '')) {
+      $filepath = variable_get('user_picture_default', '');
+    }
+    if (isset($filepath)) {
+      $alt = t("@user's picture", array('@user' => format_username($account)));
+      // If the image does not have a valid Drupal scheme (for eg. HTTP),
+      // don't load image styles.
+      if (module_exists('image') && file_valid_uri($filepath) && $style = variable_get('user_picture_style', '')) {
+        $variables['user_picture'] = theme('image_style', array('style_name' => $style, 'path' => $filepath, 'alt' => $alt, 'title' => $alt));
+      }
+      else {
+        $variables['user_picture'] = theme('image', array('path' => $filepath, 'alt' => $alt, 'title' => $alt, 'attributes' => array('class' => array('img-circle', 'media-object'))));
+        // Hack.
+        $variables['user_picture'] = str_replace('img-responsive', '', $variables['user_picture']);
+      }
+      if (!empty($account->uid) && user_access('access user profiles')) {
+        $attributes = array('attributes' => array('title' => t('View user profile.')), 'html' => TRUE);
+        $variables['user_picture'] = l($variables ['user_picture'], "user/$account->uid", $attributes);
+      }
+    }
+  }
 }

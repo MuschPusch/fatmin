@@ -7348,7 +7348,7 @@ table .checkbox input[type="checkbox"] {
   padding-left: 0;
 }
 .main-content-wrapper {
-  padding: 25px !important;
+  padding: 18px !important;
 }
 .navbar .logo {
   padding-left: 15px;
@@ -7420,25 +7420,6 @@ table .checkbox input[type="checkbox"] {
   border-top: 2px solid #428bca;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 -1px 0 0 rgba(0, 0, 0, 0.03);
 }
-/* move below */
-.breadcrumb {
-  background-color: #fafbfc;
-  line-height: 10px;
-  padding: 0px;
-  font-size: 11px;
-  border-radius: 0;
-  background: #EBEDF0;
-}
-.form-control {
-  border: 1px solid #E0E0E0;
-  color: #707980;
-  height: 36px;
-  padding: 9px 10px;
-  box-shadow: none!important;
-}
-thead {
-  border-bottom: 3px solid #428bca;
-}
 /* Issue detail */
 .timeline {
   padding-left: 0;
@@ -7454,10 +7435,9 @@ thead {
   height: 50px;
   font-size: 17px;
   line-height: 50px;
-  -webkit-font-smoothing: antialiased;
   position: absolute;
-  color: #707980;
-  background: #E0E0E0;
+  color: #999999;
+  background: #ffffff;
   border-radius: 50%;
   text-align: center;
   left: 6%;
@@ -7466,8 +7446,11 @@ thead {
   padding: 0;
 }
 .timeline-danger .timeline-body {
-  border-color: #EF553A;
-  background-color: #EF553A!important;
+  border-color: #16a085;
+  background-color: #16a085 !important;
+}
+.timeline a {
+  color: #f8f8f8;
 }
 .timeline > li .timeline-body {
   margin: 0 0 20px 14%;
@@ -7477,7 +7460,7 @@ thead {
   border-width: 2px;
   border-style: solid;
   border-radius: 3px;
-  background-color: #FFF;
+  background-color: #ffffff;
 }
 .timeline:before {
   content: '';
@@ -7496,6 +7479,25 @@ thead {
 .timeline-green .timeline-body {
   border-color: #16a085;
   background-color: #16a085 !important;
+}
+/* move below */
+.breadcrumb {
+  background-color: #fafbfc;
+  line-height: 10px;
+  padding: 0px;
+  font-size: 11px;
+  border-radius: 0;
+  background: #EBEDF0;
+}
+.form-control {
+  border: 1px solid #E0E0E0;
+  color: #707980;
+  height: 36px;
+  padding: 9px 10px;
+  box-shadow: none!important;
+}
+thead {
+  border-bottom: 3px solid #428bca;
 }
 /*
 .homebox-portlet .portlet-header {
