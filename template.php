@@ -18,8 +18,8 @@ function pm_kickstart_theme_preprocess_node(&$vars) {
 
 function pm_kickstart_theme_node_view_alter(&$node) {
   // Needs work.
-  $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn';
-  $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn-success';
+  // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn';
+  // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn-success';
 }
 
 function pm_kickstart_theme_comment_view_alter(&$comment) {
