@@ -111,8 +111,8 @@
       <div id="sidebar-wrapper" class="sidebar-wrapper col-md-2 ">
           <div class="navbar-inverse sidebar clearfix" role="navigation">
             <div class="sidebar-nav clearfix">
+              <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-right"></i></button>
               <ul class="nav nav-pills nav-stacked fa-ul">
-                <li role="separator" class="divider"><h6>Menu</h6></li>
                 <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="/">Home</a></li>
                 <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="#">Reports</a></li>
                 <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="/pm/projects">Projects<span class="badge badge-projects">1</span></a></li>
@@ -143,8 +143,6 @@
             <?php endif; ?>
           </div>
           <br />
-          <br />
-            <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-left"></i></button>
       </div>
       <!-- /#sidebar-wrapper -->
 
