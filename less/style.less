@@ -1,14 +1,98 @@
-// Bootstrap library.
-@import 'bootstrap.less';
-
 // Base-theme overrides.
 @import 'overrides.less';
+@import 'grid.less';
+@import 'sidebar.less';
+@import 'homebox.less';
+@import 'panel.less';
+@import 'timeline.less';
+@import 'typo.less';
+
+/* move below */
+.breadcrumb {
+  background-color: @brand-highlighted;
+  border-radius: 0;
+  line-height: 10px;
+  padding: 0px;
+  font-size: 11px;
+  border-radius: 0;
+  background: #EBEDF0;
+}
+
+.form-control {
+  border: 1px solid #E0E0E0;
+  color: #707980;
+  height: 36px;
+  padding: 9px 10px;
+  box-shadow: none!important;
+}
+
+thead {
+  border-bottom: 3px solid @brand-primary;
+}
 
 // Theme specific.
+/*
+.homebox-portlet .portlet-header {
+    border: none;
+    background: transparent;
+    font-size: inherit;
+}
+.portlet-header a.btn {
+    background: white;
+}
+
+.homebox-portlet {
+    background-color: transparent;
+    border: none;
+}
+
+.homebox-column {
+    margin: 0;
+    background: transparent;
+    min-height: 40px;
+}
+
+.pmdash-homebox-block {
+  .panel-heading {
+    padding: 0;
+    .portlet-header {
+      padding: 10px 15px;
+    }
+  }
+  .portlet-header {
+    .btn-group {
+      z-index: 10;
+    }
+    .portlet-title {
+      z-index: 9;
+    }
+  }
+  .portlet-maximize {
+    .fa-expand.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-minimize {
+    .fa-compress.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-minus {
+    .fa-minus.hide {
+      display: inline-block !important;
+    }
+  }
+  .portlet-plus {
+    .fa-plus.hide {
+      display: inline-block !important;
+    }
+  }
+}
+
+
 @import 'header.less';
 @import 'content.less';
 @import 'footer.less';
-
 body {
   background-color: @brand-bg;
 }
@@ -106,68 +190,6 @@ a.btn-default.pm-dashboard-link-main:hover {
   padding: 0px 10px;
 }
 
-#homebox .homebox-portlet .portlet-header {
-    border: none;
-    background: transparent;
-    font-size: inherit;
-}
-.portlet-header a.btn {
-    background: white;
-}
-
-#homebox .homebox-portlet {
-    background-color: transparent;
-    border: none;
-}
-
-#homebox .homebox-column {
-    margin: 0;
-    background: transparent;
-    min-height: 40px;
-}
-
-#homebox .homebox-portlet .homebox-portlet-inner {
-  border-color: #dddddd;
-}
-
-
-#homebox .pmdash-homebox-block {
-  .panel-heading {
-    padding: 0;
-    .portlet-header {
-      padding: 10px 15px;
-    }
-  }
-  .portlet-header {
-    .btn-group {
-      z-index: 10;
-    }
-    .portlet-title {
-      z-index: 9;
-    }
-  }
-  .portlet-maximize {
-    .fa-expand.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-minimize {
-    .fa-compress.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-minus {
-    .fa-minus.hide {
-      display: inline-block !important;
-    }
-  }
-  .portlet-plus {
-    .fa-plus.hide {
-      display: inline-block !important;
-    }
-  }
-}
-
 .btn-group-xs ul.dropdown-menu {
   padding: 0;
   button{
@@ -184,3 +206,4 @@ a.btn-default.pm-dashboard-link-main:hover {
 ul#views-display-menu-tabs ul.dropdown-menu li {
   margin: 0;
 }
+*/

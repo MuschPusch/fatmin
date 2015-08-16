@@ -13,24 +13,27 @@
 @gray-dark:              lighten(#000, 20%);   // #333
 @gray:                   lighten(#000, 33.5%); // #555
 @gray-light:             lighten(#000, 60%);   // #999
-@gray-lighter:           lighten(#000, 93.5%); // #eee
+@gray-lighter:           lighten(#000, 93.5%); // #EBEEF0
 @gray-lightest:          lighten(#000, 98%);   // #eee
 
 // Brand colors
 // -------------------------
 
+@projects:              #05A7CF;
+@issues:                #F9D00D;
+@issues-background:     #16A085;
 @brand-primary:         #428bca;
 @brand-success:         #5cb85c;
 @brand-warning:         #f0ad4e;
 @brand-danger:          #d9534f;
-@brand-info:            #5bc0de;
+@brand-info:            #05A7CF;
 
 @brand-bg:              #ffffff;
 @brand-highlighted:     #fafbfc;
 // Scaffolding
 // -------------------------
 
-@body-bg:               #fff;
+@body-bg:               #EBEEF0;
 @text-color:            @gray-dark;
 
 // Links
@@ -42,7 +45,7 @@
 // Typography
 // -------------------------
 
-@font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-sans-serif:  Roboto,'Segoe UI','Droid Sans',Tahoma,Arial,sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -51,7 +54,7 @@
 @font-size-large:         ceil(@font-size-base * 1.25); // ~18px
 @font-size-small:         ceil(@font-size-base * 0.85); // ~12px
 
-@font-size-h1:            floor(@font-size-base * 2.6); // ~36px
+@font-size-h1:            floor(@font-size-base * 2.0); // ~28px
 @font-size-h2:            floor(@font-size-base * 2.15); // ~30px
 @font-size-h3:            ceil(@font-size-base * 1.7); // ~24px
 @font-size-h4:            ceil(@font-size-base * 1.25); // ~18px
@@ -62,7 +65,7 @@
 @line-height-computed:    floor(@font-size-base * @line-height-base); // ~20px
 
 @headings-font-family:    @font-family-base;
-@headings-font-weight:    500;
+@headings-font-weight:    300;
 @headings-line-height:    1.1;
 @headings-color:          inherit;
 
@@ -90,9 +93,9 @@
 @line-height-large:              1.33;
 @line-height-small:              1.5;
 
-@border-radius-base:             0px;
-@border-radius-large:            0px;
-@border-radius-small:            0px;
+@border-radius-base:             2px;
+@border-radius-large:            5px;
+@border-radius-small:            1px;
 
 @component-active-color:         #fff;
 @component-active-bg:            @brand-primary;
@@ -111,7 +114,7 @@
 @table-bg-hover:                     #f5f5f5;
 @table-bg-active:                    @table-bg-hover;
 
-@table-border-color:                 #ddd; // table and cell border
+@table-border-color:                 #fff; // table and cell border
 
 
 // Buttons
@@ -263,12 +266,12 @@
 @navbar-padding-horizontal:        floor(@grid-gutter-width / 2);
 @navbar-padding-vertical:          ((@navbar-height - @line-height-computed) / 2);
 
-@navbar-default-color:             #777;
-@navbar-default-bg:                #f8f8f8;
+@navbar-default-color:             #D5DCE2;
+@navbar-default-bg:                #37444E;
 @navbar-default-border:            darken(@navbar-default-bg, 6.5%);
 
 // Navbar links
-@navbar-default-link-color:                #777;
+@navbar-default-link-color:                #D5DCE2;
 @navbar-default-link-hover-color:          #333;
 @navbar-default-link-hover-bg:             transparent;
 @navbar-default-link-active-color:         #555;
@@ -305,7 +308,7 @@
 
 // Inverted navbar brand label
 @navbar-inverse-brand-color:                @navbar-inverse-link-color;
-@navbar-inverse-brand-hover-color:          #fff;
+@navbar-inverse-brand-hover-color:          #fafafa;
 @navbar-inverse-brand-hover-bg:             transparent;
 
 // Inverted navbar toggle
@@ -648,7 +651,7 @@
 @gray-light: lighten(#000, 60%);
 @gray-lighter: lighten(#000, 93.5%);
 @gray-lightest: lighten(#000, 97.25%);
-@brand-primary: #428bca;
+@brand-primary: #5bc0de;
 @brand-success: #5cb85c;
 @brand-info: #5bc0de;
 @brand-warning: #f0ad4e;

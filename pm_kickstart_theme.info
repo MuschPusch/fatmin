@@ -72,3 +72,4 @@ scripts[] = 'js/script.js'
 ;;;;;;;;;;;;;;;;;;;;;;
 
 settings[bootstrap_region_well-sidebar_first] = ''
+exclude[css][] = 'sites/all/themes/bootstrap/css/overrides.css'
