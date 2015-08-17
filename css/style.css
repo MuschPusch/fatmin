@@ -7450,12 +7450,12 @@ table .checkbox input[type="checkbox"] {
   background-color: #5bc0de !important;
 }
 .timeline a {
-  color: #f8f8f8;
+  color: #555555;
 }
 .timeline > li .timeline-body {
   margin: 0 0 20px 14%;
   padding: 20px;
-  color: rgba(255, 255, 255, 0.75);
+  color: #555555;
   position: relative;
   border-width: 2px;
   border-style: solid;
@@ -7468,17 +7468,17 @@ table .checkbox input[type="checkbox"] {
   top: 10px;
   bottom: 0;
   width: 2px;
-  background: #E0E0E0;
+  background: #999999;
   left: 6%;
   margin-left: 2px;
 }
 .timeline-primary .timeline-body {
-  border-color: #5bc0de;
-  background-color: #5bc0de !important;
+  border-color: #999999;
+  background-color: #ffffff;
 }
 .timeline-green .timeline-body {
-  border-color: #16a085;
-  background-color: #16a085 !important;
+  border-color: #999999;
+  background-color: #fff !important;
 }
 td > a {
   color: #555555 !important;
