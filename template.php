@@ -99,16 +99,20 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
   foreach ($vars['links'] as $key => $value) {
     if (isset($value['attributes']['class'])) {
       if ($key = array_search('icon compact add', $value['attributes']['class']) !== FALSE) {
-        unset($value['attributes']['class'][0]);
-        $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
-        $value['attributes']['class'][] = 'btn';
-        $value['attributes']['class'][] = 'btn-default';
+        if (is_array($value['attributes']['class'])) {
+          unset($value['attributes']['class'][0]);
+          $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
+          $value['attributes']['class'][] = 'btn';
+          $value['attributes']['class'][] = 'btn-default';
+        }
       }
       if ($key = array_search('icon compact rearrange', $value['attributes']['class']) !== FALSE) {
-        unset($value['attributes']['class'][0]);
-        $value['title'] = '<i class="fa fa-gear"></i> ' . $value['title'];
-        $value['attributes']['class'][] = 'btn';
-        $value['attributes']['class'][] = 'btn-default';
+        if (is_array($value['attributes']['class'])) {
+          unset($value['attributes']['class'][0]);
+          $value['title'] = '<i class="fa fa-gear"></i> ' . $value['title'];
+          $value['attributes']['class'][] = 'btn';
+          $value['attributes']['class'][] = 'btn-default';
+        }
       }
     }
 
@@ -274,6 +278,13 @@ function pm_kickstart_theme_theme() {
       'arguments' => array('form' => NULL),
       'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
     ),
+    'billing_navigation' => array(
+      'path' => $path . '/templates',
+      'template' => 'billing-navigation',
+      'variables' => array(
+        'links' => NULL,
+      ),
+    ),
   );
 }
 
@@ -389,4 +400,43 @@ function pm_kickstart_theme_preprocess_user_picture(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Implements hook_navbar().
+ */
+function _menu_links() {
+
+  $items = array(
+    'orders' => array(
+      'title' => 'Alle Rechnungen',
+      'href' => 'admin/commerce/orders',
+    ),
+    'create-invoice' => array(
+      'title' => 'Rechnung erstellen',
+      'href' => 'admin/commerce/orders/add',
+    ),
+    'customer-profiles' => array(
+      'title' => 'Alle Kundenprofile',
+      'href' => 'admin/commerce/customer-profiles',
+    ),
+    'reporting' => array(
+      'title' => 'Reporting',
+      'href' => 'admin/commerce/reports',
+    ),
+    'billables' => array(
+      'title' => 'Billable items',
+      'href' => 'admin/billing/billables',
+    ),
+    'billables-peruser' => array(
+      'title' => 'Billable items per user',
+      'href' => 'admin/billing/billables/byuser',
+    ),
+    'expenses' => array(
+      'title' => 'Expenses',
+      'href' => 'admin/billing/expenses',
+    ),
+  );
+
+  return $items;
 }
