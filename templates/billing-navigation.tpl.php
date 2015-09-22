@@ -1,9 +1,9 @@
 <div id="sidebar-wrapper" class="sidebar-wrapper">
     <div class="navbar-inverse sidebar clearfix" role="navigation">
       <div class="navbar-wrapBrand clearfix">
+        <?php $logo = 'http://ci.factorial.io/logo-300/1/random/color/logo.svg'; ?>
         <?php if ($logo): ?>
           <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <?php $logo = 'http://ci.factorial.io/logo-300/1/random/color/logo.png'; ?>
             <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
           </a>
         <?php endif; ?>
@@ -17,13 +17,25 @@
           <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-right"></i></button>
         </div>
 
-        <ul class="nav nav-pills nav-stacked fa-ul">
-          <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="/">Home</a></li>
+        <ul class="nav nav--sidebar nav-pills nav-stacked">
+          <li role="presentation">
+            <a href="/" class="nav-link fa fa-home icon-main">
+              <span class="nav-linkTitle">
+                Home
+              </span>
+            </a>
+          </li>
           <?php
-          foreach ($links as $link) {
-            echo "<li role='presentation'><i class='fa fa-li fa-camera-retro icon-main'></i> " . l($link['title'], $link['href']) . "</a></li>";
-          }
-          ?>
+          foreach ($links as $link) { ?>
+            <li role='presentation'>
+              <a href="<?php echo $link['href']; ?>" class="nav-link fa fa-camera-retro icon-main">
+                <span class="nav-linkTitle">
+                  <?php echo $link['title']; ?>
+                </span>
+              </a>
+            </li>
+          <?php
+          } ?>
           <!--
           <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="/pm/projects">Projects<span class="badge badge-projects">1</span></a></li>
           <li role="separator" class="divider"><h6>Some seperator</h6></li>

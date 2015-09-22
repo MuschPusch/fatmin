@@ -13,7 +13,11 @@
 }
 
 .logo {
-  max-width: 100px;
+  min-height: 120px;
+
+  img {
+    width: 120px;
+  }
 }
 
 #sidebar-toggle-button {
@@ -22,4 +26,22 @@
 
 .badge {
 
+}
+
+.sidebar-nav a {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-link {
+
+  &.fa:before {
+    margin-right: 1em;
+    font-size: 18px;
+  }
+}
+
+#wrapper.toggled .nav-linkTitle {
+  display: none;
 }

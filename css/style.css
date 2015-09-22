@@ -7498,12 +7498,18 @@ img {
 .main-wrapper {
   padding-left: 250px;
 }
+#wrapper.toggled .main-wrapper {
+  padding-left: 50px;
+}
 .sidebar-wrapper {
   position: fixed;
   width: 250px;
   top: 0;
   left: 0;
   height: 100%;
+}
+#wrapper.toggled .sidebar-wrapper {
+  width: 50px;
 }
 /*
  * Menu Styles
@@ -7516,10 +7522,25 @@ img {
   border: 0;
 }
 .logo {
-  max-width: 100px;
+  min-height: 120px;
+}
+.logo img {
+  width: 120px;
 }
 #sidebar-toggle-button {
   float: right;
+}
+.sidebar-nav a {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+}
+.nav-link.fa:before {
+  margin-right: 1em;
+  font-size: 18px;
+}
+#wrapper.toggled .nav-linkTitle {
+  display: none;
 }
 /* move below */
 .breadcrumb {
