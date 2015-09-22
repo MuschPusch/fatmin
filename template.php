@@ -91,28 +91,27 @@ function pm_kickstart_theme_preprocess_ctools_dropdown(&$vars) {
   }
 }
 
+/**
+ * Implements theme_preprocess_links__ctools_dropbutton().
+ */
 function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
 
   $flag_first_item = TRUE;
   foreach ($vars['links'] as $key => $value) {
-    if (isset($value['attributes']['class'])) {
+    if (isset($value['attributes']) && is_array($value['attributes']['class'])) {
       if ($key = array_search('icon compact add', $value['attributes']['class']) !== FALSE) {
-        if (is_array($value['attributes']['class'])) {
-          unset($value['attributes']['class'][0]);
-          $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
-          $value['attributes']['class'][] = 'btn';
-          $value['attributes']['class'][] = 'btn-default';
-        }
+        unset($value['attributes']['class'][0]);
+        $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
+        $value['attributes']['class'][] = 'btn';
+        $value['attributes']['class'][] = 'btn-default';
       }
       if ($key = array_search('icon compact rearrange', $value['attributes']['class']) !== FALSE) {
-        if (is_array($value['attributes']['class'])) {
-          unset($value['attributes']['class'][0]);
-          $value['title'] = '<i class="fa fa-gear"></i> ' . $value['title'];
-          $value['attributes']['class'][] = 'btn';
-          $value['attributes']['class'][] = 'btn-default';
-        }
+        unset($value['attributes']['class'][0]);
+        $value['title'] = '<i class="fa fa-gear"></i> ' . $value['title'];
+        $value['attributes']['class'][] = 'btn';
+        $value['attributes']['class'][] = 'btn-default';
       }
     }
 
@@ -128,7 +127,7 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
     if ($flag_first_item) {
       $vars['default_link'] = $value;
       $vars['default_link']['url'] = $url;
-      $vars['default_link']['class'] = !empty($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+      $vars['default_link']['class'] = is_array($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
     }
     else {
       $vars['dropdown_menu'][$key] = $value;
