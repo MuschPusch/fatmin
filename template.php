@@ -258,24 +258,27 @@ function pm_kickstart_theme_form_alter(array &$form, array &$form_state = array(
  * Implements hook_theme
  */
 function pm_kickstart_theme_theme() {
+
+  $path = drupal_get_path('theme', 'pm_kickstart_theme');
+
   return array(
     'user_login' => array(
       'render element' => 'form',
       'template' => 'user-login',
       'arguments' => array('form' => NULL),
-      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+      'path' => $path . '/templates',
     ),
     'user_register_form' => array(
       'render element' => 'form',
       'template' => 'user-register',
       'arguments' => array('form' => NULL),
-      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+      'path' => $path . '/templates',
     ),
     'user_pass' => array(
       'render element' => 'form',
       'template' => 'user-pass',
       'arguments' => array('form' => NULL),
-      'path' => drupal_get_path('theme', 'pm_kickstart_theme') . '/templates',
+      'path' => $path . '/templates',
     ),
     'billing_navigation' => array(
       'path' => $path . '/templates',

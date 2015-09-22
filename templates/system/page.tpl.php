@@ -74,20 +74,10 @@
  */
 ?>
 <div id="wrapper" class="clearfix">
-  <header id="navbar" role="banner" class="navbar navbar--main navbar-default navbar-fixed-top">
-    <div class="navbar-header">
-      <?php if ($logo): ?>
-<!--
-      <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
--->
-      <?php endif; ?>
-
-      <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
-    </div>
+  <header role="banner" class="Header navbar navbar--main navbar-fixed-top">
+    <?php if (!empty($title)): ?>
+      <h1 class="Header-title pull-left"><?php print $title; ?></h1>
+    <?php endif; ?>
     <?php if (!empty($page['header'])): ?>
       <div class="pull-left header">
         <?php print render($page['header']); ?>
@@ -123,11 +113,6 @@
                       <?php endif; ?>
                       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
                       <a id="main-content"></a>
-                      <?php print render($title_prefix); ?>
-                      <?php if (!empty($title)): ?>
-                        <h1 class="page-header"><?php print $title; ?></h1>
-                      <?php endif; ?>
-                      <?php print render($title_suffix); ?>
                       <?php print $messages; ?>
                       <?php if (!empty($tabs)): ?>
                         <?php print render($tabs); ?>

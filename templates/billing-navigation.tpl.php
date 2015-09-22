@@ -1,55 +1,42 @@
-<div id="sidebar-wrapper" class="sidebar-wrapper">
-    <div class="navbar-inverse sidebar clearfix" role="navigation">
-      <div class="navbar-wrapBrand clearfix">
-        <?php $logo = 'http://ci.factorial.io/logo-300/1/random/color/logo.svg'; ?>
-        <?php if ($logo): ?>
-          <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-          </a>
-        <?php endif; ?>
-
-        <?php if (!empty($site_name)): ?>
-        <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-        <?php endif; ?>
+<div class="wrapSidebar">
+  <div class="Sidebar clearfix" role="navigation">
+    <div class="Sidebar-wrapBrand clearfix">
+      <?php $logo = 'http://ci.factorial.io/logo-300/1/random/color/logo.svg'; ?>
+      <?php if ($logo): ?>
+        <a class="Sidebar-logo Logo" href="/" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
+      <?php endif; ?>
+      <a class="Sidebar-name" href="/" title="<?php print t('Home'); ?>">Factorial.io</a>
+    </div>
+    <div class="Sidebar-navigation clearfix">
+      <div id="sidebar-toggle-button" class="Sidebar-toggleButton clearfix">
+        <i class="fa fa-chevron-left"></i>
       </div>
-      <div class="sidebar-nav clearfix">
-        <div class="clearfix">
-          <button id="sidebar-toggle-button" class="btn"><i class="fa fa-chevron-left pull-right"></i></button>
-        </div>
 
-        <ul class="nav nav--sidebar nav-pills nav-stacked">
-          <li role="presentation">
-            <a href="/" class="nav-link fa fa-home icon-main">
-              <span class="nav-linkTitle">
-                Home
+      <ul class="Navigation Navigation--sidebar">
+        <?php
+        array_unshift($links, array('href' => '/', 'title' => 'Home'));
+
+        $links['reporting']['badge_count'] = 3;
+
+        foreach ($links as $link) { ?>
+          <li role='presentation'>
+            <a href="<?php echo $link['href']; ?>" class="Navigation-link">
+              <i class="Navigation-icon fa fa-camera-retro"></i>
+              <span class="Navigation-linkTitle">
+                <?php echo $link['title']; ?>
               </span>
+              <?php if (!empty($link['badge_count'])) : ?>
+                <span class="Navigation-wrapBadge">
+                  <span class="Badge Badge-projects"><?php echo $link['badge_count']; ?></span>
+                </span>
+              <?php endif; ?>
             </a>
           </li>
-          <?php
-          foreach ($links as $link) { ?>
-            <li role='presentation'>
-              <a href="<?php echo $link['href']; ?>" class="nav-link fa fa-camera-retro icon-main">
-                <span class="nav-linkTitle">
-                  <?php echo $link['title']; ?>
-                </span>
-              </a>
-            </li>
-          <?php
-          } ?>
-          <!--
-          <li role="presentation"><i class='fa fa-li fa-soundcloud icon-main' ></i><a href="/pm/projects">Projects<span class="badge badge-projects">1</span></a></li>
-          <li role="separator" class="divider"><h6>Some seperator</h6></li>
-          <li role="presentation"><i class='fa fa-li fa-home icon-main'></i><a href="/">Home</a></li>
-          <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/issues">Issues<span class="badge badge-issues">4</span></a></li>
-          <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/timetracking">Timetracking</a></li>
-          <li role="presentation"><i class='fa fa-li fa-camera-retro icon-main'></i><a href="/pm/issues">Issues</a></li>
-          <ul class="nav nav-pills nav-stacked fa-ul nav-pills-sub">
-            <li role="presentation"><i class='fa fa-li fa-plus icon-sub' ></i><a href="/node/add/pmissue">Add issue</a></li>
-            <li role="presentation"><i class='fa fa-li fa-list icon-sub' ></i><a href="/">My issues</a></li>
-          </ul>
-          -->
-        </ul>
-
-      </div>
+        <?php
+        } ?>
+      </ul>
     </div>
+  </div>
 </div>

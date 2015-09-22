@@ -7496,51 +7496,115 @@ img {
   height: auto;
 }
 .main-wrapper {
-  padding-left: 250px;
+  padding-left: 260px;
 }
 #wrapper.toggled .main-wrapper {
   padding-left: 50px;
 }
-.sidebar-wrapper {
+.wrapSidebar {
   position: fixed;
-  width: 250px;
+  width: 260px;
   top: 0;
   left: 0;
   height: 100%;
+  padding-bottom: 100%;
+  margin-bottom: -100%;
+  background: #19324C;
 }
-#wrapper.toggled .sidebar-wrapper {
+#wrapper.toggled .wrapSidebar {
   width: 50px;
+}
+.Header {
+  left: 260px;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+#wrapper.toggled .Header {
+  left: 50px;
+}
+.Header-title {
+  margin: 10px 20px 8px;
 }
 /*
  * Menu Styles
  */
-.navbar--main {
-  left: 250px;
-  margin-bottom: 0;
-}
-.navbar-fixed-top {
-  border: 0;
-}
-.logo {
+.Sidebar-logo {
   min-height: 120px;
 }
-.logo img {
+.Sidebar-logo img {
   width: 120px;
 }
-#sidebar-toggle-button {
+.Sidebar-toggleButton {
   float: right;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 999px 0 0 999px;
+  background-color: #fff;
+  border: 0;
 }
-.sidebar-nav a {
-  text-transform: uppercase;
-  font-weight: 500;
+#wrapper.toggled .Sidebar-toggleButton {
+  float: none;
+  text-align: center;
+  border-radius: 0;
+}
+.Navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.Navigation-link {
+  position: relative;
+  display: table;
+  table-layout: auto;
+  min-width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  color: #fff;
   font-size: 14px;
 }
-.nav-link.fa:before {
-  margin-right: 1em;
-  font-size: 18px;
+#wrapper.toggled .Navigation-link {
+  padding: 10px 17px;
 }
-#wrapper.toggled .nav-linkTitle {
+.Navigation-icon {
+  display: table-cell;
+  font-size: 16px;
+  vertical-align: middle;
+  color: #fff;
+}
+.Navigation-linkTitle {
+  display: table-cell;
+  width: 100%;
+  padding: 0 10px 0 20px;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 200;
+}
+#wrapper.toggled .Navigation-linkTitle {
   display: none;
+}
+.Navigation-wrapBadge {
+  display: table-cell;
+  vertical-align: middle;
+}
+.Badge {
+  display: block;
+  min-width: 16px;
+  line-height: 16px;
+  font-size: 9px;
+  text-align: center;
+  color: #19324C;
+  background-color: #fff;
+  border-radius: 9999px;
+}
+#wrapper.toggled .Badge {
+  position: absolute;
+  top: 50%;
+  text-indent: -9999px;
+  min-width: 6px;
+  line-height: 6px;
+  margin-top: -4px;
+  right: 7px;
 }
 /* move below */
 .breadcrumb {
