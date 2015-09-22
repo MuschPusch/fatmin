@@ -74,7 +74,7 @@
  */
 ?>
 <div id="wrapper" class="clearfix">
-  <header id="navbar" role="banner" class="navbar navbar-default navbar-fixed-top">
+  <header id="navbar" role="banner" class="navbar navbar--main navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <?php if ($logo): ?>
 <!--
@@ -107,57 +107,57 @@
     </div>
   </header>
         <!-- Sidebar -->
-  <div class="row no-gutter">
   <?php echo theme('billing_navigation', array('links' => _menu_links())); ?>
       <!-- /#sidebar-wrapper -->
+  <div class="main-wrapper">
 
-        <!-- Page Content -->
-      <div id="page-content-wrapper" class="main-content-wrapper col-md-10">
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="col-lg-12">
-                    <div class="row">
-                      <section>
-                        <?php if (!empty($page['highlighted'])): ?>
-                          <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
-                        <?php endif; ?>
-                        <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
-                        <a id="main-content"></a>
-                        <?php print render($title_prefix); ?>
-                        <?php if (!empty($title)): ?>
-                          <h1 class="page-header"><?php print $title; ?></h1>
-                        <?php endif; ?>
-                        <?php print render($title_suffix); ?>
-                        <?php print $messages; ?>
-                        <?php if (!empty($tabs)): ?>
-                          <?php print render($tabs); ?>
-                        <?php endif; ?>
-                        <?php if (!empty($page['help'])): ?>
-                          <?php print render($page['help']); ?>
-                        <?php endif; ?>
-                        <?php if (!empty($action_links)): ?>
-                          <ul class="action-links"><?php print render($action_links); ?></ul>
-                        <?php endif; ?>
-                        <?php if ($show_panel): ?>
-                        <div class='panel'>
-                          <div class="panel-body">
-                            <?php print render($page['content']); ?>
-                          </div>
-                        </div>
-                        <?php else: ?>
+    <!-- Page Content -->
+    <div id="page-content-wrapper" class="main-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                  <div class="row">
+                    <section>
+                      <?php if (!empty($page['highlighted'])): ?>
+                        <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
+                      <?php endif; ?>
+                      <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
+                      <a id="main-content"></a>
+                      <?php print render($title_prefix); ?>
+                      <?php if (!empty($title)): ?>
+                        <h1 class="page-header"><?php print $title; ?></h1>
+                      <?php endif; ?>
+                      <?php print render($title_suffix); ?>
+                      <?php print $messages; ?>
+                      <?php if (!empty($tabs)): ?>
+                        <?php print render($tabs); ?>
+                      <?php endif; ?>
+                      <?php if (!empty($page['help'])): ?>
+                        <?php print render($page['help']); ?>
+                      <?php endif; ?>
+                      <?php if (!empty($action_links)): ?>
+                        <ul class="action-links"><?php print render($action_links); ?></ul>
+                      <?php endif; ?>
+                      <?php if ($show_panel): ?>
+                      <div class='panel'>
+                        <div class="panel-body">
                           <?php print render($page['content']); ?>
-                        <?php endif; ?>
-                      </section>
+                        </div>
+                      </div>
+                      <?php else: ?>
+                        <?php print render($page['content']); ?>
+                      <?php endif; ?>
+                    </section>
 
-                      <footer class="footer container">
-                        <?php print render($page['footer']); ?>
-                      </footer>
-                    </div>
+                    <footer class="footer container">
+                      <?php print render($page['footer']); ?>
+                    </footer>
                   </div>
-              </div>
-          </div>
-      </div>
-      <!-- /#page-content-wrapper -->
-
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- /#page-content-wrapper -->
+
   </div>
+</div>

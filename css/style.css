@@ -7483,6 +7483,44 @@ table .checkbox input[type="checkbox"] {
 td > a {
   color: #555555 !important;
 }
+/*
+ * Page Styles
+ */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.main-wrapper {
+  padding-left: 250px;
+}
+.sidebar-wrapper {
+  position: fixed;
+  width: 250px;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+/*
+ * Menu Styles
+ */
+.navbar--main {
+  left: 250px;
+  margin-bottom: 0;
+}
+.navbar-fixed-top {
+  border: 0;
+}
+.logo {
+  max-width: 100px;
+}
+#sidebar-toggle-button {
+  float: right;
+}
 /* move below */
 .breadcrumb {
   background-color: #fafbfc;
