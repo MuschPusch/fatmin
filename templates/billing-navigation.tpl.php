@@ -1,7 +1,7 @@
 <div class="wrapSidebar">
   <div class="Sidebar clearfix" role="navigation">
     <div class="Sidebar-wrapBrand clearfix">
-      <?php $logo = 'http://ci.factorial.io/logo-300/1/random/color/logo.svg'; ?>
+      <?php $logo = 'http://ci.factorial.io/logo/1/random/color/0/logo.svg'; ?>
       <?php if ($logo): ?>
         <a class="Sidebar-logo Logo" href="/" title="<?php print t('Home'); ?>">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
