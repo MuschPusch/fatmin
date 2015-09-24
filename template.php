@@ -100,9 +100,15 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
 
   $flag_first_item = TRUE;
   foreach ($vars['links'] as $key => $value) {
-    if (isset($value['attributes']) && is_array($value['attributes']['class'])) {
-      if ($key = array_search('icon compact add', $value['attributes']['class']) !== FALSE) {
+    if (isset($value['attributes'])) {
+
+      if (isset($value['attributes']['class']) && !is_array($value['attributes']['class'])) {
+        $value['attributes']['class'] = array($value['attributes']['class']);
+      }
+      elseif (is_array($value['attributes']['class'])) {
         unset($value['attributes']['class'][0]);
+      }
+      if ($key = array_search('icon compact add', $value['attributes']['class']) !== FALSE) {
         $value['title'] = '<i class="fa fa-plus"></i> ' . $value['title'];
         $value['attributes']['class'][] = 'btn';
         $value['attributes']['class'][] = 'btn-default';
@@ -412,31 +418,31 @@ function _menu_links() {
   $items = array(
     'orders' => array(
       'title' => 'Alle Rechnungen',
-      'href' => 'admin/commerce/orders',
+      'href' => '/admin/commerce/orders',
     ),
     'create-invoice' => array(
       'title' => 'Rechnung erstellen',
-      'href' => 'admin/commerce/orders/add',
+      'href' => '/admin/commerce/orders/add',
     ),
     'customer-profiles' => array(
       'title' => 'Alle Kundenprofile',
-      'href' => 'admin/commerce/customer-profiles',
+      'href' => '/admin/commerce/customer-profiles',
     ),
     'reporting' => array(
       'title' => 'Reporting',
-      'href' => 'admin/commerce/reports',
+      'href' => '/admin/commerce/reports',
     ),
     'billables' => array(
       'title' => 'Billable items',
-      'href' => 'admin/billing/billables',
+      'href' => '/admin/billing/billables',
     ),
     'billables-peruser' => array(
       'title' => 'Billable items per user',
-      'href' => 'admin/billing/billables/byuser',
+      'href' => '/admin/billing/billables/byuser',
     ),
     'expenses' => array(
       'title' => 'Expenses',
-      'href' => 'admin/billing/expenses',
+      'href' => '/admin/billing/expenses',
     ),
   );
 
@@ -479,7 +485,7 @@ function pm_kickstart_theme_inline_entity_form_entity_table($variables) {
     }
     $header[] = $column;
   }
-  $header[] = t('Hours referenced!!!');
+  $header[] = t('Hours referenced');
   $header[] = t('Operations');
 
   // Build an array of entity rows for the table.

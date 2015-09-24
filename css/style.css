@@ -7606,6 +7606,9 @@ img {
   margin-top: -4px;
   right: 7px;
 }
+#field-additional-info-add-more-wrapper {
+  clear: both;
+}
 /* move below */
 .breadcrumb {
   background-color: #fafbfc;
