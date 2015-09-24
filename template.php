@@ -133,7 +133,7 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
     if ($flag_first_item) {
       $vars['default_link'] = $value;
       $vars['default_link']['url'] = $url;
-      $vars['default_link']['class'] = is_array($value['attributes']['class']) ? implode(' ', $value['attributes']['class']) : '';
+      $vars['default_link']['class'] = (isset($value['attributes']['class']) && is_array($value['attributes']['class'])) ? implode(' ', $value['attributes']['class']) : '';
     }
     else {
       $vars['dropdown_menu'][$key] = $value;
