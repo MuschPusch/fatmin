@@ -585,3 +585,27 @@ function pm_kickstart_theme_inline_entity_form_entity_table($variables) {
     return theme('table', array('header' => $header, 'rows' => $rows, 'sticky' => FALSE, 'attributes' => $table_attributes));
   }
 }
+
+/**
+ * Implements theme_menu_local_action().
+ */
+function pm_kickstart_theme_menu_local_action($variables) {
+  $link = $variables['element']['#link'];
+
+  $output = '<li>';
+  if (isset($link['href'])) {
+    $attributes = isset($link['localized_options']) ? $link['localized_options'] : array();
+    $attributes['attributes']['class'] = array('btn', 'btn-success', 'btn-xs');
+    $attributes['html'] = TRUE;
+    $output .= l('<i class="fa fa-plus fa-w"></i>  ' . $link['title'], $link['href'], $attributes);
+  }
+  elseif (!empty($link['localized_options']['html'])) {
+    $output .= $link['title'];
+  }
+  else {
+    $output .= check_plain($link['title']);
+  }
+  $output .= "</li>\n";
+
+  return $output;
+}
