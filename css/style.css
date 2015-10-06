@@ -7609,6 +7609,21 @@ img {
 #field-additional-info-add-more-wrapper {
   clear: both;
 }
+.info-box .fa {
+  color: #fff;
+}
+.bg-red {
+  background-color: #d9534f;
+}
+.bg-green {
+  background-color: #00c58e;
+}
+.bg-blue {
+  background-color: #0096db;
+}
+.bg-aqua {
+  background-color: #05a7cf;
+}
 @font-face {
   font-family: 'SuisseIntl';
   src: url('../../fonts/SuisseIntl-Light-WebXL.eot');
