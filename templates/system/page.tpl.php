@@ -103,6 +103,11 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper" class="main-content-wrapper">
+        <?php
+        if (module_exists('billing_reports')) {
+          echo theme('billing_report_overview');
+        }
+        ?>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
