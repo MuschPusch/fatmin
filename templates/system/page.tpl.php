@@ -105,7 +105,7 @@
     <div id="page-content-wrapper" class="main-content-wrapper">
         <?php
         if (module_exists('billing_reports')) {
-          echo theme('billing_report_overview');
+          echo theme('billing_reports_overview');
         }
         ?>
         <div class="container-fluid">
