@@ -15,7 +15,7 @@
     <?php print $inline_css; ?>
   </style>
 </head>
-<body>
+<body class="<?php print $global_modifier; ?>">
 
 <?php
   foreach ($viewed_orders as $viewed_order):
