@@ -1,0 +1,49 @@
+/*
+ * Page Styles
+ */
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-wrapper {
+  padding-left: 260px;
+
+  #wrapper.toggled & {
+    padding-left: 50px;
+  }
+}
+
+.wrapSidebar {
+  position: fixed;
+  width: 260px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-bottom: 100%;
+  margin-bottom: -100%;
+  background: #19324C;
+
+  #wrapper.toggled & {
+    width: 50px;
+  }
+}
+
+.Header {
+  left: 260px;
+  margin-bottom: 0;
+  background-color: #fff;
+
+  #wrapper.toggled & {
+    left: 50px;
+  }
+}
+
+.Header-title {
+  margin: 10px 20px 8px;
+}

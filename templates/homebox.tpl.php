@@ -11,7 +11,7 @@
   <?php if ($user->uid): ?>
     <div id="homebox-buttons">
       <?php if (!empty($add_links)): ?>
-        <a href="javascript:void(0)" id="homebox-add-link" class="btn btn-success btn-xs"><i class="fa fa-plus fa-w"></i> <?php print t('Add a block') ?></a>
+        <a href="javascript:void(0)" id="homebox-add-link" class='btn btn-success btn-xs'><i class="fa fa-plus fa-w"></i><?php print t('Add a block') ?></a>
       <?php endif; ?>
       <?php print $save_form; ?>
     </div>
@@ -20,10 +20,9 @@
   <?php if (!empty($add_links)): ?>
     <div id="homebox-add"><?php print $add_links; ?></div>
   <?php endif; ?>
-
-  <div class="homebox-maximized"></div>
+  <div class="homebox-maximized row"></div>
   <?php for ($i = 1; $i <= count($regions); $i++): ?>
-    <div class="homebox-column-wrapper homebox-column-wrapper-<?php print $i; ?> homebox-row-<?php print $page->settings['rows'][$i]; ?>"<?php print $page->settings['widths'][$i] ? ' style="width: ' . $page->settings['widths'][$i] . '%;"' : ''; ?>>
+    <div class="homebox-column-wrapper col-md-<?php print $i + 1; ?> homebox-row-<?php print $page->settings['rows'][$i]; ?>"<?php print $page->settings['widths'][$i] ? ' style="width: ' . $page->settings['widths'][$i] . '%;"' : ''; ?>>
       <div class="homebox-column" id="homebox-column-<?php print $i; ?>">
         <?php foreach ($regions[$i] as $key => $weight): ?>
           <?php foreach ($weight as $block): ?>

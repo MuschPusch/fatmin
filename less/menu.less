@@ -1,0 +1,97 @@
+/*
+ * Menu Styles
+ */
+
+
+.Sidebar-logo {
+  min-height: 120px;
+
+  img {
+    width: 120px;
+  }
+}
+
+.Sidebar-toggleButton {
+  float: right;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 999px 0 0 999px;
+  background-color: #fff;
+  border: 0;
+
+  #wrapper.toggled & {
+    float: none;
+    text-align: center;
+    border-radius: 0;
+  }
+}
+
+.Navigation {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Navigation-link {
+  position: relative;
+  display: table;
+  table-layout: auto;
+  min-width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 14px;
+
+  #wrapper.toggled & {
+    padding: 10px 17px;
+  }
+}
+
+.Navigation-icon {
+  display: table-cell;
+  font-size: 16px;
+  vertical-align: middle;
+  color: #fff;
+}
+
+
+.Navigation-linkTitle {
+  display: table-cell;
+  width: 100%;
+  padding: 0 10px 0 20px;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 200;
+}
+
+#wrapper.toggled .Navigation-linkTitle {
+  display: none;
+}
+
+.Navigation-wrapBadge {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.Badge {
+  display: block;
+  min-width: 16px;
+  line-height: 16px;
+  font-size: 9px;
+  text-align: center;
+  color: #19324C;
+  background-color: #fff;
+  border-radius: 9999px;
+
+  #wrapper.toggled & {
+    position: absolute;
+    top: 50%;
+    text-indent: -9999px;
+    min-width: 6px;
+    line-height: 6px;
+    margin-top: -4px;
+    right: 7px;
+  }
+}
+

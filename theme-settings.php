@@ -10,7 +10,7 @@
 /**
  * Implements hook_form_system_theme_settings_alter().
  */
-function pm_kickstart_theme_form_system_theme_settings_alter(&$form, &$form_state) {
+function fatmin_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['advanced']['bootstrap_cdn']['bootstrap_bootswatch'] = array(
     '#type' => 'value',
     '#value' => NULL
