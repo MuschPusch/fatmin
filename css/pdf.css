@@ -185,7 +185,11 @@ strong {
 
 .Logo-image {
   width: 48.6%;
-  margin-left: -10.8%;
+  margin-left: -9.5%;
+}
+
+.without_logo .Logo-image {
+  display: none; 
 }
 
 .Header-date,
@@ -222,6 +226,7 @@ strong {
 
 .lineItems td {
   padding-bottom: 1.3rem;
+  vertical-align: bottom;
 }
 
 .views-align-right {
