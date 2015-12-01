@@ -1,0 +1,9 @@
+{
+    "name": "factorial-io/fatmin",
+    "description": "Fat bootstrap based backend theme",
+    "type": "drupal-theme",
+    "license": "GPL-2.0+",
+    "require": {
+      "drupal/bootstrap": "7.3.1"
+    }
+}
