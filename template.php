@@ -8,7 +8,7 @@
 /**
  * Implements hook_preprocess_node().
  */
-function pm_kickstart_theme_preprocess_node(&$vars) {
+function fatmin_preprocess_node(&$vars) {
   $vars['submitted'] = '<h5>' . t('Created by !username on !datetime',
     array(
       '!username' => $vars['name'],
@@ -16,13 +16,13 @@ function pm_kickstart_theme_preprocess_node(&$vars) {
     )) . '</h5>';
 }
 
-function pm_kickstart_theme_node_view_alter(&$node) {
+function fatmin_node_view_alter(&$node) {
   // Needs work.
   // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn';
   // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn-success';
 }
 
-function pm_kickstart_theme_comment_view_alter(&$comment) {
+function fatmin_comment_view_alter(&$comment) {
   foreach ($comment['links']['comment']['#links'] as &$link) {
     $btn = 'btn-success';
     if ($link['title'] == 'delete') {
@@ -35,7 +35,7 @@ function pm_kickstart_theme_comment_view_alter(&$comment) {
 /**
  * Implements hook_preprocess_page().
  */
-function pm_kickstart_theme_preprocess_page(&$vars) {
+function fatmin_preprocess_page(&$vars) {
   // Select minimalist login screen template for anonymous users.
   if (!empty($vars['user']) && empty($vars['user']->uid)) {
     $vars['theme_hook_suggestions'][] = 'page__pmkickstart_minimalist_user_login';
@@ -50,19 +50,19 @@ function pm_kickstart_theme_preprocess_page(&$vars) {
 /**
  * Implements hook_preprocess_html().
  */
-function pm_kickstart_theme_preprocess_html(&$vars) {
+function fatmin_preprocess_html(&$vars) {
   $vars['body_attributes_array']['class'][] = 'navbar-is-fixed-top';
 }
 
 /**
  * Implements hook_preprocess_views_view_table().
  */
-function pm_kickstart_theme_preprocess_views_view_table(&$vars) {
+function fatmin_preprocess_views_view_table(&$vars) {
   $vars['classes_array'][] = 'table table-stripped table-bordered table-hover';
 }
 
 
-function pm_kickstart_theme_preprocess_ctools_dropdown(&$vars) {
+function fatmin_preprocess_ctools_dropdown(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
 
@@ -94,7 +94,7 @@ function pm_kickstart_theme_preprocess_ctools_dropdown(&$vars) {
 /**
  * Implements theme_preprocess_links__ctools_dropbutton().
  */
-function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
+function fatmin_preprocess_links__ctools_dropbutton(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
 
@@ -144,7 +144,7 @@ function pm_kickstart_theme_preprocess_links__ctools_dropbutton(&$vars) {
   }
 }
 
-function pm_kickstart_theme_preprocess_pm_dashboard_link(&$variables) {
+function fatmin_preprocess_pm_dashboard_link(&$variables) {
   switch ($variables['icon']) {
     case 'pmconfiguration':
       $variables['fa_icon'] = 'fa-gear';
@@ -186,7 +186,7 @@ function pm_kickstart_theme_preprocess_pm_dashboard_link(&$variables) {
 /**
  * Theme function implementation for bootstrap_search_form_wrapper.
  */
-function pm_kickstart_theme_bootstrap_search_form_wrapper($variables) {
+function fatmin_bootstrap_search_form_wrapper($variables) {
   $parent = reset($variables['element']['#parents']);
   $prefix = TRUE;
   $button_type = 'button';
@@ -231,7 +231,7 @@ function pm_kickstart_theme_bootstrap_search_form_wrapper($variables) {
 /**
  * Implements hook_form_alter().
  */
-function pm_kickstart_theme_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
+function fatmin_form_alter(array &$form, array &$form_state = array(), $form_id = NULL) {
   if ($form_id) {
     switch ($form_id) {
       case 'user_login_form':
@@ -263,55 +263,45 @@ function pm_kickstart_theme_form_alter(array &$form, array &$form_state = array(
 /**
  * Implements hook_theme
  */
-function pm_kickstart_theme_theme() {
-
-  $path = drupal_get_path('theme', 'pm_kickstart_theme');
-
+function fatmin_theme() {
   return array(
     'user_login' => array(
       'render element' => 'form',
       'template' => 'user-login',
       'arguments' => array('form' => NULL),
-      'path' => $path . '/templates',
+      'path' => drupal_get_path('theme', 'fatmin') . '/templates',
     ),
     'user_register_form' => array(
       'render element' => 'form',
       'template' => 'user-register',
       'arguments' => array('form' => NULL),
-      'path' => $path . '/templates',
+      'path' => drupal_get_path('theme', 'fatmin') . '/templates',
     ),
     'user_pass' => array(
       'render element' => 'form',
       'template' => 'user-pass',
       'arguments' => array('form' => NULL),
-      'path' => $path . '/templates',
-    ),
-    'billing_navigation' => array(
-      'path' => $path . '/templates',
-      'template' => 'billing-navigation',
-      'variables' => array(
-        'links' => NULL,
-      ),
+      'path' => drupal_get_path('theme', 'fatmin') . '/templates',
     ),
   );
 }
 
-function pm_kickstart_theme_preprocess_user_login(&$variables) {
+function fatmin_preprocess_user_login(&$variables) {
   $variables['intro_text'] = t('Login');
-  pm_kickstart_theme_user_form_links($variables);
+  fatmin_user_form_links($variables);
 }
 
-function pm_kickstart_theme_preprocess_user_register_form(&$variables) {
+function fatmin_preprocess_user_register_form(&$variables) {
   $variables['intro_text'] = t('Register');
-  pm_kickstart_theme_user_form_links($variables);
+  fatmin_user_form_links($variables);
 }
 
-function pm_kickstart_theme_preprocess_user_pass(&$variables) {
+function fatmin_preprocess_user_pass(&$variables) {
   $variables['intro_text'] = t('Forgot Password');
-  pm_kickstart_theme_user_form_links($variables);
+  fatmin_user_form_links($variables);
 }
 
-function pm_kickstart_theme_user_form_links(&$variables) {
+function fatmin_user_form_links(&$variables) {
   $variables['rendered'] = drupal_render_children($variables['form']);
 
   $variables['forgot_password_link'] = (drupal_valid_path('user/password')) ? l(t('Forgot password?'), 'user/password') : '';
@@ -319,13 +309,13 @@ function pm_kickstart_theme_user_form_links(&$variables) {
   $variables['user_login_link'] = (drupal_valid_path('user/login')) ? l(t('Login?'), 'user/login') : '';
 }
 
-function pm_kickstart_theme_preprocess_links(&$vars) {
+function fatmin_preprocess_links(&$vars) {
   if (isset($vars['attributes']['class']) AND ($key = array_search('links inline', $vars['attributes']['class']) !== FALSE)) {
     $vars['attributes']['class'][$key] = 'list-inline';
   }
 }
 
-function pm_kickstart_theme_preprocess_ctools_dropbutton(&$vars) {
+function fatmin_preprocess_ctools_dropbutton(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
 
@@ -354,7 +344,7 @@ function pm_kickstart_theme_preprocess_ctools_dropbutton(&$vars) {
   }
 }
 
-function pm_kickstart_theme_ctools_collapsible($vars) {
+function fatmin_ctools_collapsible($vars) {
   $class = $vars['collapsed'] ? ' ctools-collapsed' : '';
   $output = '<div class="xoxo ctools-collapsible-container' . $class . '">';
   $output .= '<div class="ctools-collapsible-handle">' . $vars['handle'] . '</div>';
@@ -364,11 +354,11 @@ function pm_kickstart_theme_ctools_collapsible($vars) {
   return $output;
 }
 
-function pm_kickstart_theme_css_alter(&$css) {
+function fatmin_css_alter(&$css) {
   unset($css[drupal_get_path('module', 'homebox') . '/homebox.css']);
 }
 
-function pm_kickstart_theme_preprocess_user_picture(&$variables) {
+function fatmin_preprocess_user_picture(&$variables) {
   $variables['user_picture'] = '';
   if (variable_get('user_pictures', 0)) {
     $account = $variables['account'];
@@ -455,7 +445,7 @@ function _menu_links() {
  * @param $variables
  *   Contains the form element data from $element['entities'].
  */
-function pm_kickstart_theme_inline_entity_form_entity_table($variables) {
+function fatmin_inline_entity_form_entity_table($variables) {
   $form = $variables['form'];
   $entity_type = $form['#entity_type'];
   $fields = $form['#table_fields'];
@@ -589,7 +579,7 @@ function pm_kickstart_theme_inline_entity_form_entity_table($variables) {
 /**
  * Implements theme_menu_local_action().
  */
-function pm_kickstart_theme_menu_local_action($variables) {
+function fatmin_menu_local_action($variables) {
   $link = $variables['element']['#link'];
 
   $output = '<li>';
