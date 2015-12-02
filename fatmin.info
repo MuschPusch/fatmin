@@ -1,5 +1,5 @@
-name = PM Kickstart Theme
-description = A Bootstrap Sub-theme for PM Kickstart.
+name = Fatmin
+description = Fat admin theme based on bootstrap built for drupal.
 core = 7.x
 base theme = bootstrap
 
