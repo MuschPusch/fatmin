@@ -261,7 +261,7 @@ function fatmin_form_alter(array &$form, array &$form_state = array(), $form_id 
 }
 
 /**
- * Implements hook_theme
+ * Implements hook_theme().
  */
 function fatmin_theme() {
   return array(
@@ -282,6 +282,13 @@ function fatmin_theme() {
       'template' => 'user-pass',
       'arguments' => array('form' => NULL),
       'path' => drupal_get_path('theme', 'fatmin') . '/templates',
+    ),
+    'billing_navigation' => array(
+      'path' => $path . '/templates',
+      'template' => 'billing-navigation',
+      'variables' => array(
+        'links' => NULL,
+      ),
     ),
   );
 }
