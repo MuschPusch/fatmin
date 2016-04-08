@@ -317,7 +317,7 @@ function fatmin_user_form_links(&$variables) {
 }
 
 function fatmin_preprocess_links(&$vars) {
-  if (isset($vars['attributes']['class']) AND ($key = array_search('links inline', $vars['attributes']['class']) !== FALSE)) {
+  if (is_array($vars['attributes']['class']) AND ($key = array_search('links inline', $vars['attributes']['class']) !== FALSE)) {
     $vars['attributes']['class'][$key] = 'list-inline';
   }
 }
