@@ -284,7 +284,7 @@ function fatmin_theme() {
       'path' => drupal_get_path('theme', 'fatmin') . '/templates',
     ),
     'billing_navigation' => array(
-      'path' => $path . '/templates',
+      'path' => drupal_get_path('theme', 'fatmin') . '/templates',
       'template' => 'billing-navigation',
       'variables' => array(
         'links' => NULL,
