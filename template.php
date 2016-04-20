@@ -482,8 +482,8 @@ function fatmin_inline_entity_form_entity_table($variables) {
     }
     $header[] = $column;
   }
-  $header[] = t('Hours referenced');
-  $header[] = t('Operations');
+  $header[] = array('data' => t('Hours referenced'));
+  $header[] = array('data' => t('Operations'));
 
   // Build an array of entity rows for the table.
   $rows = array();
@@ -553,7 +553,7 @@ function fatmin_inline_entity_form_entity_table($variables) {
       $quantity[] = $timetracking_item->pm_duration->value();
     }
     $total = array('#markup' => round(array_sum($quantity), 2) . " Hours");
-    $cells[] = drupal_render($total);
+    $cells[] = array('data' => drupal_render($total));
     $cells[] = drupal_render($form[$key]['actions']);
     // Create the row.
     $rows[] = array('data' => $cells, 'class' => $row_classes);
