@@ -417,6 +417,16 @@ function _menu_links() {
       'title' => 'Alle Rechnungen',
       'href' => '/admin/commerce/orders',
     ),
+    'recurring-orders' => array(
+      'title' => t('Recurring Orders'),
+      'href' => '/admin/billing/recurring-orders',
+      'icon' => 'fa-repeat',
+    ),
+    'create-recurring-order' => array(
+      'title' => t('Create Recurring Order'),
+      'href' => '/node/add/billing-recurring-order',
+      'icon' => 'fa-plus',
+    ),
     'create-invoice' => array(
       'title' => 'Rechnung erstellen',
       'href' => '/admin/commerce/orders/add',
