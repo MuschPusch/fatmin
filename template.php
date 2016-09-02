@@ -2,7 +2,7 @@
 
 /**
  * @file
- * template.php
+ * Template.php.
  */
 
 /**
@@ -16,12 +16,9 @@ function fatmin_preprocess_node(&$vars) {
     )) . '</h5>';
 }
 
-function fatmin_node_view_alter(&$node) {
-  // Needs work.
-  // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn';
-  // $node['links']['comment']['#links']['comment-add']['attributes']['class'][] = 'btn-success';
-}
-
+/**
+ * THEME_comment_view_alter().
+ */
 function fatmin_comment_view_alter(&$comment) {
   foreach ($comment['links']['comment']['#links'] as &$link) {
     $btn = 'btn-success';
@@ -47,6 +44,7 @@ function fatmin_preprocess_page(&$vars) {
     $vars['show_panel'] = TRUE;
   }
 }
+
 /**
  * Implements hook_preprocess_html().
  */
@@ -61,7 +59,9 @@ function fatmin_preprocess_views_view_table(&$vars) {
   $vars['classes_array'][] = 'table table-stripped table-bordered table-hover';
 }
 
-
+/**
+ * THEME_preprocess_ctools_dropdown().
+ */
 function fatmin_preprocess_ctools_dropdown(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
@@ -144,35 +144,47 @@ function fatmin_preprocess_links__ctools_dropbutton(&$vars) {
   }
 }
 
+/**
+ * THEME_preprocess_pm_dashboard_link().
+ */
 function fatmin_preprocess_pm_dashboard_link(&$variables) {
   switch ($variables['icon']) {
     case 'pmconfiguration':
       $variables['fa_icon'] = 'fa-gear';
       break;
+
     case 'pmexpenses':
       $variables['fa_icon'] = 'fa-money';
       break;
+
     case 'pmnotes':
       $variables['fa_icon'] = 'fa-file-o';
       break;
+
     case 'pmtimetrackings':
       $variables['fa_icon'] = 'fa-clock-o';
       break;
+
     case 'pmtickets':
       $variables['fa_icon'] = 'fa-ticket';
       break;
+
     case 'pmtasks':
       $variables['fa_icon'] = 'fa-tasks';
       break;
+
     case 'pmprojects':
       $variables['fa_icon'] = 'fa-flask';
       break;
+
     case 'pmteams':
       $variables['fa_icon'] = 'fa-users';
       break;
+
     case 'pmorganizations':
       $variables['fa_icon'] = 'fa-institution';
       break;
+
     default:
       $variables['fa_icon'] = 'fa-wrench';
       break;
@@ -183,6 +195,7 @@ function fatmin_preprocess_pm_dashboard_link(&$variables) {
     $variables['href_add'] = check_plain(url('node/add/' . $variables['add_type']));
   }
 }
+
 /**
  * Theme function implementation for bootstrap_search_form_wrapper.
  */
@@ -194,14 +207,17 @@ function fatmin_bootstrap_search_form_wrapper($variables) {
     case 'name':
       $fa_icon = 'fa-user';
       break;
+
     case 'pass':
       $fa_icon = 'fa-key';
       break;
+
     case 'search_block_form':
       $fa_icon = 'fa-search';
       $button_type = 'submit';
       $prefix = FALSE;
       break;
+
     default:
       $fa_icon = 'fa-keyboard-o';
       break;
@@ -209,7 +225,7 @@ function fatmin_bootstrap_search_form_wrapper($variables) {
 
   $button  = '<span class="input-group-btn">';
   $button .= '<button type="' . $button_type . '" tabIndex="-1" class="btn btn-default">';
-  $button .= '<i class="fa '. $fa_icon .' fa-fw"></i>';
+  $button .= '<i class="fa ' . $fa_icon . ' fa-fw"></i>';
   $button .= '</button>';
   $button .= '</span>';
 
@@ -226,7 +242,6 @@ function fatmin_bootstrap_search_form_wrapper($variables) {
 
   return $output;
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -293,21 +308,33 @@ function fatmin_theme() {
   );
 }
 
+/**
+ *
+ */
 function fatmin_preprocess_user_login(&$variables) {
   $variables['intro_text'] = t('Login');
   fatmin_user_form_links($variables);
 }
 
+/**
+ *
+ */
 function fatmin_preprocess_user_register_form(&$variables) {
   $variables['intro_text'] = t('Register');
   fatmin_user_form_links($variables);
 }
 
+/**
+ *
+ */
 function fatmin_preprocess_user_pass(&$variables) {
   $variables['intro_text'] = t('Forgot Password');
   fatmin_user_form_links($variables);
 }
 
+/**
+ *
+ */
 function fatmin_user_form_links(&$variables) {
   $variables['rendered'] = drupal_render_children($variables['form']);
 
@@ -316,12 +343,18 @@ function fatmin_user_form_links(&$variables) {
   $variables['user_login_link'] = (drupal_valid_path('user/login')) ? l(t('Login?'), 'user/login') : '';
 }
 
+/**
+ *
+ */
 function fatmin_preprocess_links(&$vars) {
   if (!empty($vars['attributes']['class']) && is_array($vars['attributes']['class']) && ($key = array_search('links inline', $vars['attributes']['class']) !== FALSE)) {
     $vars['attributes']['class'][$key] = 'list-inline';
   }
 }
 
+/**
+ *
+ */
 function fatmin_preprocess_ctools_dropbutton(&$vars) {
   $vars['dropdown_menu'] = array();
   $vars['default_link']  = array();
@@ -351,6 +384,9 @@ function fatmin_preprocess_ctools_dropbutton(&$vars) {
   }
 }
 
+/**
+ * THEME_ctools_collabsible().
+ */
 function fatmin_ctools_collapsible($vars) {
   $class = $vars['collapsed'] ? ' ctools-collapsed' : '';
   $output = '<div class="xoxo ctools-collapsible-container' . $class . '">';
@@ -361,10 +397,9 @@ function fatmin_ctools_collapsible($vars) {
   return $output;
 }
 
-function fatmin_css_alter(&$css) {
-  unset($css[drupal_get_path('module', 'homebox') . '/homebox.css']);
-}
-
+/**
+ * THEME_preprocess_user_picture().
+ */
 function fatmin_preprocess_user_picture(&$variables) {
   $variables['user_picture'] = '';
   if (variable_get('user_pictures', 0)) {
@@ -401,7 +436,7 @@ function fatmin_preprocess_user_picture(&$variables) {
       }
       if (!empty($account->uid) && user_access('access user profiles')) {
         $attributes = array('attributes' => array('title' => t('View user profile.')), 'html' => TRUE);
-        $variables['user_picture'] = l($variables ['user_picture'], "user/$account->uid", $attributes);
+        $variables['user_picture'] = l($variables['user_picture'], "user/$account->uid", $attributes);
       }
     }
   }
@@ -560,7 +595,9 @@ function fatmin_inline_entity_form_entity_table($variables) {
     // Add the buttons belonging to the "Operations" column.
     $quantity = array();
     foreach ($wrapper->field_billed_items as $delta => $timetracking_item) {
-      $quantity[] = $timetracking_item->pm_duration->value();
+      if (isset($timetracking_item->pm_duration)) {
+        $quantity[] = $timetracking_item->pm_duration->value();
+      }
     }
     $total = array('#markup' => round(array_sum($quantity), 2) . " Hours");
     $cells[] = array('data' => drupal_render($total));
