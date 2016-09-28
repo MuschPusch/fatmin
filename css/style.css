@@ -592,7 +592,7 @@ table .checkbox input[type="checkbox"] {
 .main-content-wrapper {
   padding: 18px !important;
 }
-#wrapper .wrapSidebar.toggled .Sidebar-name {
+#wrapper.toggled .wrapSidebar .Sidebar-name {
   display: none;
 }
 #wrapper .wrapSidebar a {

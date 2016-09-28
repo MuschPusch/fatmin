@@ -1,14 +1,16 @@
-#wrapper .wrapSidebar {
-  &.toggled {
+#wrapper {
+  &.toggled .wrapSidebar{
     .Sidebar-name {
       display: none;
     }
   }
-  a {
-    color: #aabbcc;
-    text-decoration: none;
-    &:hover {
-      color: #ffffff;
+  .wrapSidebar{
+    a {
+      color: #aabbcc;
+      text-decoration: none;
+      &:hover {
+        color: #ffffff;
+      }
     }
   }
 }
