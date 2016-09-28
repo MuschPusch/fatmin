@@ -448,50 +448,65 @@ function fatmin_preprocess_user_picture(&$variables) {
 function _menu_links() {
 
   $items = array(
+    'home' => array(
+      'title' => t('Home'),
+      'href' => '/',
+      'icon' => 'fa-home',
+      'badge_count' => '',
+    ),
     'orders' => array(
       'title' => 'Alle Rechnungen',
       'href' => '/admin/commerce/orders',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-shopping-cart',
+      'badge_count' => '',
+    ),
+    'create-invoice' => array(
+      'title' => 'Rechnung erstellen',
+      'href' => '/admin/commerce/orders/add',
+      'icon' => 'fa-cart-plus',
+      'badge_count' => '',
     ),
     'recurring-orders' => array(
       'title' => t('Recurring Orders Profiles'),
       'href' => '/admin/billing/recurring-orders',
       'icon' => 'fa-repeat',
+      'badge_count' => '',
     ),
     'create-recurring-order' => array(
       'title' => t('Create Recurring Order Profile'),
       'href' => '/node/add/billing-recurring-order',
       'icon' => 'fa-plus',
-    ),
-    'create-invoice' => array(
-      'title' => 'Rechnung erstellen',
-      'href' => '/admin/commerce/orders/add',
-      'icon' => 'fa-circle-o',
+      'badge_count' => '',
     ),
     'customer-profiles' => array(
       'title' => 'Alle Kundenprofile',
       'href' => '/admin/commerce/customer-profiles',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-users',
+      'badge_count' => '',
     ),
     'reporting' => array(
       'title' => t('Reporting'),
       'href' => '/admin/commerce/reports',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-line-chart',
+      'badge_count' => '!',
     ),
     'billables' => array(
       'title' => t('Billable items'),
       'href' => '/admin/billing/billables',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-cubes',
+      'badge_count' => '',
     ),
     'billables-peruser' => array(
       'title' => t('Billable items per user'),
       'href' => '/admin/billing/billables/byuser',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-cube',
+      'badge_count' => '',
     ),
     'expenses' => array(
       'title' => t('Expenses'),
       'href' => '/admin/billing/expenses',
-      'icon' => 'fa-circle-o',
+      'icon' => 'fa-money',
+      'badge_count' => '',
     ),
   );
 

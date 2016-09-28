@@ -16,9 +16,6 @@
 
       <ul class="Navigation Navigation--sidebar">
         <?php
-        array_unshift($links, array('href' => '/', 'title' => 'Home'));
-
-        $links['reporting']['badge_count'] = 3;
 
         foreach ($links as $link) { ?>
           <li role='presentation'>
