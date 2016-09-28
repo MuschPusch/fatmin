@@ -592,14 +592,14 @@ table .checkbox input[type="checkbox"] {
 .main-content-wrapper {
   padding: 18px !important;
 }
-#wrapper.toggled .Sidebar-name {
+#wrapper .wrapSidebar.toggled .Sidebar-name {
   display: none;
 }
-#wrapper a {
+#wrapper .wrapSidebar a {
   color: #aabbcc;
   text-decoration: none;
 }
-#wrapper a:hover {
+#wrapper .wrapSidebar a:hover {
   color: #ffffff;
 }
 .navbar .logo {
