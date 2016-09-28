@@ -451,6 +451,7 @@ function _menu_links() {
     'orders' => array(
       'title' => 'Alle Rechnungen',
       'href' => '/admin/commerce/orders',
+      'icon' => 'fa-circle-o',
     ),
     'recurring-orders' => array(
       'title' => t('Recurring Orders Profiles'),
@@ -465,26 +466,32 @@ function _menu_links() {
     'create-invoice' => array(
       'title' => 'Rechnung erstellen',
       'href' => '/admin/commerce/orders/add',
+      'icon' => 'fa-circle-o',
     ),
     'customer-profiles' => array(
       'title' => 'Alle Kundenprofile',
       'href' => '/admin/commerce/customer-profiles',
+      'icon' => 'fa-circle-o',
     ),
     'reporting' => array(
       'title' => t('Reporting'),
       'href' => '/admin/commerce/reports',
+      'icon' => 'fa-circle-o',
     ),
     'billables' => array(
       'title' => t('Billable items'),
       'href' => '/admin/billing/billables',
+      'icon' => 'fa-circle-o',
     ),
     'billables-peruser' => array(
       'title' => t('Billable items per user'),
       'href' => '/admin/billing/billables/byuser',
+      'icon' => 'fa-circle-o',
     ),
     'expenses' => array(
       'title' => t('Expenses'),
       'href' => '/admin/billing/expenses',
+      'icon' => 'fa-circle-o',
     ),
   );
 

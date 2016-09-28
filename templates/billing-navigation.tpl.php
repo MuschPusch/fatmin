@@ -23,7 +23,7 @@
         foreach ($links as $link) { ?>
           <li role='presentation'>
             <a href="<?php echo $link['href']; ?>" class="Navigation-link">
-              <i class="Navigation-icon fa fa-camera-retro"></i>
+              <i class="Navigation-icon fa <?php echo $link['icon']; ?>"></i>
               <span class="Navigation-linkTitle">
                 <?php echo $link['title']; ?>
               </span>
