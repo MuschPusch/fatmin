@@ -1,14 +1,23 @@
+#wrapper {
+  &.toggled {
+    .Sidebar-name {
+      display: none;
+    }
+  }
+  a {
+    color: #aabbcc;
+    text-decoration: none;
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
 .navbar .logo {
   padding-left: 15px;
 }
 
 
 /* SIDEBAR */
-.sidebar-nav a{
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 12px;
-}
 
 .icon-main {
   padding: 9px 15px;
@@ -39,7 +48,16 @@
   text-transform: lowercase;
 }
 
-.sidebar-nav {
+.Sidebar-navigation {
+  a {
+    font-weight: 500;
+    font-size: 12px;
+    text-decoration: none;
+    color: #aabbcc;
+    &:hover {
+      color: #ffffff;
+    }
+  }
   .badge.badge-issues {
     background-color: @issues;
   }
