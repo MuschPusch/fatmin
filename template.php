@@ -418,12 +418,12 @@ function _menu_links() {
       'href' => '/admin/commerce/orders',
     ),
     'recurring-orders' => array(
-      'title' => t('Recurring Orders'),
+      'title' => t('Recurring Orders Profiles'),
       'href' => '/admin/billing/recurring-orders',
       'icon' => 'fa-repeat',
     ),
     'create-recurring-order' => array(
-      'title' => t('Create Recurring Order'),
+      'title' => t('Create Recurring Order Profile'),
       'href' => '/node/add/billing-recurring-order',
       'icon' => 'fa-plus',
     ),
@@ -436,19 +436,19 @@ function _menu_links() {
       'href' => '/admin/commerce/customer-profiles',
     ),
     'reporting' => array(
-      'title' => 'Reporting',
+      'title' => t('Reporting'),
       'href' => '/admin/commerce/reports',
     ),
     'billables' => array(
-      'title' => 'Billable items',
+      'title' => t('Billable items'),
       'href' => '/admin/billing/billables',
     ),
     'billables-peruser' => array(
-      'title' => 'Billable items per user',
+      'title' => t('Billable items per user'),
       'href' => '/admin/billing/billables/byuser',
     ),
     'expenses' => array(
-      'title' => 'Expenses',
+      'title' => t('Expenses'),
       'href' => '/admin/billing/expenses',
     ),
   );
