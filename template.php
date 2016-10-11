@@ -505,7 +505,7 @@ function _menu_links() {
     'expenses' => array(
       'title' => t('Expenses'),
       'href' => '/admin/billing/expenses',
-      'icon' => 'fa-money',
+      'icon' => 'fa-cutlery',
       'badge_count' => '',
     ),
   );
